@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <title>1212 Polo Club ,Abuja Nigeria| {% block title %}{% endblock %}<</title>
+        <meta name="keywords" content="1212 Polo" />
+        <meta name="description" content="Abuja Polo Club - Gwarimpa , Abuja>
+        <meta name="author" content="leproghrammeen.com">  
+        {% load staticfiles %}
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Theme CSS -->
+        <link href="{% static "css/style.css" %}" rel="stylesheet" media="screen">
+        <!-- Responsive CSS -->
+        <link href="{% static "css/theme-responsive.css" %}" rel="stylesheet" media="screen">
+        <!-- Skins Theme -->
+        <link href="#" rel="stylesheet" media="screen" class="skin">
+
+
+        <!-- Head Libs -->
+        <script src="{% static "js/modernizr.js" %}"></script>
+
+
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    </head>
+
+    <body>
+        <!-- layout-->
+        <div id="layout">
+            <!-- Header-->
+           {%  include "header.html" %}
+            <!-- End Header-->
+            
+           {% block content %} {% endblock %}
+      
+            <!-- footer-->
+           {% include "footer.html" %}
+        <!-- End layout-->
+
+        <!-- ======================= JQuery libs =========================== -->
+        <!-- jQuery local--> 
+        <script src="{% static "js/jquery.js" %}"></script>                
+        <!--Nav-->
+        <script type="text/javascript" src="{% static "js/nav/tinynav.js" %}"></script> 
+        <script type="text/javascript" src="{% static "js/nav/hoverIntent.js" %}"></script>   
+        <script type="text/javascript" src="{% static "js/nav/superfish.js" %}"></script> 
+        <script src="{% static "js/nav/jquery.sticky.js" type="text/javascript" %}"></script>    
+        <!--Totop-->
+        <script type="text/javascript" src="{% static "js/totop/jquery.ui.totop.js" %}" ></script>  
+         <!--Accorodion-->
+        <script type="text/javascript" src="{% static "js/accordion/accordion.js" %}" ></script>  
+        <!--Slide-->
+        <script type="text/javascript" src="{% static "js/slide/camera.js" %}" ></script>      
+        <script type='text/javascript' src="{% static "js/slide/jquery.easing.1.3.min.js" %}"></script>   
+        <!-- Maps -->
+        <script src="{% static "js/maps/gmap3.js" %}"></script>            
+        <!--Ligbox--> 
+        <script type="text/javascript" src="{% static "js/fancybox/jquery.fancybox.js" %}"></script> 
+        <!-- carousel.js-->
+        <script src="{% static "js/carousel/carousel.js" %}"></script>
+        <!-- Filter -->
+        <script src="{% static "js/filters/jquery.isotope.js" %}" type="text/javascript"></script>
+        <!-- Twitter Feed-->
+        <script src="{% static "js/twitter/jquery.tweet.js" %}"></script> 
+        <!-- flickr Feed-->
+        <script src="{% static "js/flickr/jflickrfeed.min.js" %}"></script> 
+        <!-- Counter -->
+        <script src="{% static "js/counter/jquery.countdown.js" %}"></script>      
+        <!--Theme Options-->
+        
+        <script type="text/javascript">
+        $theme_url = "{% static  "css/skins/green" %}" +  "/" +  "green.css";
+            
+        </script>
+        <script type="text/javascript" src="{% static "js/theme-options/theme-options.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/theme-options/jquery.cookies.js" %}"></script> 
+        <!-- Bootstrap.js-->
+        <script type="text/javascript" src="{% static "js/bootstrap/bootstrap.js" %}"></script> 
+        <!--MAIN FUNCTIONS-->
+        <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+        <!-- ======================= End JQuery libs =========================== -->
+ 
+    </body>
+</html>

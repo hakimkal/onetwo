@@ -1,0 +1,106 @@
+ {% load staticfiles %}
+ <header>
+                <!-- End headerbox-->
+                <div class="headerbox">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Logo-->
+                            <div class="col-md-3 logo">
+                                <a href="{% url "home" %}">                            
+                                    <img src="{% static "img/logo.png" %}" class="logo_img">
+                                </a>
+                            </div>
+                            <!-- End Logo-->
+
+                            <!-- Adds Header-->
+                            <div class="col-md-9 adds">
+                            <div class="socila">
+                            <div class="colsi">
+                             <img src="{% static "img/phone.png" %}" class="logo_img">
+                            </div>
+                             <div class="colsi">
+                            <h1><a href="tel:+2348098233966" style="color:#000;">+234 809 823 3966</a></h1>
+                            </div>
+                            </div>
+                            </div>
+                            <!-- End Adds Header-->
+                        </div>
+                    </div>
+                </div>
+                <!-- End headerbox-->  
+
+                <!-- mainmenu-->
+                <nav class="mainmenu">
+                    <div class="container">
+                        <!-- Menu-->
+                        <ul class="sf-menu" id="menu">
+                            <li class="selected">
+                                <a href="{% url "home" %} ">Home</a>
+                            </li>                                
+                            <li class="current">
+                                <a href="#">About</a>
+                                <ul class="sub-current">
+                                    <li>
+                                        <a href="{% url "about" %}">History</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tournaments</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Trustees</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="current">
+                                 <a href="#">Gallery</a>
+                                <ul class="sub-current">
+                                    <li>
+                                        <a href="#">History</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Events</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lounch Day</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="current">
+                                <a href="#">Facilities</a>
+                                <ul class="sub-current">
+                                    <li>
+                                        <a href="#">Terrace Lounge</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Turf Club</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Race Track</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Polo Field</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Stables</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Vet Services</a>
+                                    </li>
+                                </ul>
+                            </li> 
+                            
+                            <li>
+                                <a href="#">Shop</a>
+                            </li> 
+                            
+                            <li>
+                                <a href="#">Contact</a>
+                            </li> 
+                        </ul>
+                        
+                        
+                        <!-- End Menu-->
+                    </div>
+                </nav>
+                <!-- End mainmenu-->
+            </header>

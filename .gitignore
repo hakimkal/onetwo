@@ -1,0 +1,16 @@
+bin/*
+local/*
+include/*
+polo.komodo*
+lib/*
+media
+Polo.ko*
+./static
+./settings.py
+.settings.py
+./settings.pyc
+*.pyc
+polo/config.py
+eleq
+requirements.txt
+polo/config.pyc
