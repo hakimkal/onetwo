@@ -29,7 +29,7 @@
     // Theme Panel - disable panel options
     var themepanel = "1"; // 1 (default - enable), 0 ( disable)
 
-    $(".skin").attr("href", "css/skins/"+ skin + "/" + skin + ".css");
+    $(".skin").attr("href", "http://lep12.webfactional.com/staticpolo/css/skins/"+ skin + "/" + skin + ".css");
     $("#layout").addClass(layout);	
     $("body").addClass(bg);   
     $("#theme-options").css('opacity' , themepanel);
