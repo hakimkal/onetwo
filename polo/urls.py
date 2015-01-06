@@ -14,8 +14,9 @@ urlpatterns = patterns('',
     url(r'^about/$',publicpages.views.about, name="about"),
     url(r'^events/' ,include('events.urls')),
     url(r'^teams/' ,include('teams.urls')),
+    url(r'^sliders/' ,include('sliders.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^manage/', include(admin.site.urls)),
 )
 #for serving media files
 from polo import settings  

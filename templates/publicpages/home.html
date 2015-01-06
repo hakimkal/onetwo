@@ -3,10 +3,41 @@
 
 {% block content %}
 {% load staticfiles %}
-
+{% load cropping %}
  <!-- Slide -->           
             <section class="camera_wrap camera_white_skin" id="slide">
-                <!-- Item Slide - Caption --> 
+                <!-- Item Slide - Caption -->
+                {% for s in sliders %}
+                    <div  data-src="{% cropped_thumbnail s "thumb_small" %}">
+                    <div class="style-caption fadeFromTop">
+                        <div class="overlay-bg"></div>
+                         <div class="container"> 
+                            <div class="row">
+                                <div class="col-md-7">
+                                   {% if s.title %}
+                                    <h1 class="animated fadeInRight">
+                                        {{s.title }}
+                                    </h1>
+                                {% endif %}
+                                {% if s.description %}
+                                    <p class="animated fadeInRight delay1">
+                                        
+                                        
+                                        {{s.description}}
+                                    
+                                    </p>
+                                {% endif %}
+                                    {% if s.url %}
+                                    <div class="more animated fadeInRight delay2">
+                                        <a href="#" class="btn btn-primary" name="subscribe" >More Info</a>
+                                    </div>
+                                {% endif %}
+                                </div>    
+                            </div>                     
+                        </div>      
+                    </div>
+                </div>
+                {% empty %}
                 <div  data-src="{% static "img/slide/slides/1.jpg" %}">
                     <div class="style-caption fadeFromTop">
                         <div class="overlay-bg"></div>
@@ -48,26 +79,8 @@
                 </div>
                 <!-- End Item Slide - Caption  -->
 
-                <!-- Item Slide - Caption --> 
-                <div  data-src={% static "img/slide/slides/3.jpg" %}">
-                    <div class="style-caption fadeFromTop">
-                        <div class="overlay-bg"></div>
-                         <div class="container"> 
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <h1 class="animated fadeInRight">
-                                        Lorem Ipsum
-                                    </h1>   
-                                    <p class="animated fadeInRight delay1">The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful</p> 
-                                    <div class="more animated fadeInRight delay2">
-                                        <a href="#" class="btn btn-primary" name="subscribe" >More Info</a>
-                                    </div>
-                                </div>    
-                            </div>                     
-                        </div>      
-                    </div>
-                </div>
-                <!-- End Item Slide - Caption  -->  
+               
+            {% endfor %}
             </section>   
             <!-- End Slide --> 
 
