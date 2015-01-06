@@ -29,7 +29,7 @@
                                 {% endif %}
                                     {% if s.url %}
                                     <div class="more animated fadeInRight delay2">
-                                        <a href="#" class="btn btn-primary" name="subscribe" >More Info</a>
+                                        <a href="{{s.url}}" class="btn btn-primary" name="subscribe" >More Info</a>
                                     </div>
                                 {% endif %}
                                 </div>    
@@ -57,27 +57,7 @@
                     </div>
                 </div>
                 <!-- End Item Slide - Caption  -->
-
-                <!-- Item Slide - Caption --> 
-                <div  data-src="{% static "img/slide/slides/2.jpg" %}">
-                    <div class="style-caption fadeFromTop">
-                        <div class="overlay-bg"></div>
-                         <div class="container"> 
-                            <div class="row">
-                                <div class="col-md-7">
-                                     <h1 class="animated fadeInRight">
-                                        Lorem Ipsum
-                                    </h1>   
-                                    <p class="animated fadeInRight delay1">The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful</p> 
-                                    <div class="more animated fadeInRight delay2">
-                                        <a href="#" class="btn btn-primary" name="subscribe" >More Info</a>
-                                    </div>
-                                </div>    
-                            </div>                     
-                        </div>      
-                    </div>
-                </div>
-                <!-- End Item Slide - Caption  -->
+ 
 
                
             {% endfor %}
@@ -100,8 +80,7 @@
                             <ul class="nav nav-tabs" id="myTab">
                                <li class="active"><a href="#feature-news" data-toggle="tab">FEATURED EVENTS</a></li>
                                <li><a href="#players-staff" data-toggle="tab">PLAYERS AND STAFF</a></li>
-                               <li><a href="#club-news" data-toggle="tab">CLUB TEAMS</a></li>
-                            </ul>
+                                   </ul>
                             <!-- End Nav Tabs -->
 
                             <!-- Content Tabs -->
@@ -110,90 +89,82 @@
                                 <div class="tab-pane active" id="feature-news">
                                     <!-- blog post-->  
                                     <ul id="events-carousel" class="events-carousel padding-top">
-                                        <!-- Item blog post -->  
+                                        <!-- Item blog post -->
+                                      
+                                        {% for e in events %}
                                         <li>
                                             <div class="header-post">
                                                 <div class="date">
-                                                    <span>08/jan</span>
-                                                    2014
+                                                    <span>{{e.start_date.day}} / {{e.start_date | date:"b"}}</span>
+                                                    {{e.start_date.year}}
                                                 </div>
-                                                <a href="#"><img src="{% static "img/blog/1.jpg" %}" alt=""></a>
+                                                <a href="#"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
                                                 
                                             </div>
                                             <div class="info-post">
-                                                <h4><a href="#">Name Here</a></h4>
-                                                <p>The Grounds which also doubles as a sporting centre was borne.</p>
+                                                <h4><a href="#">{{e.title}}</a></h4>
+                                                <p>{{e.brief|truncatewords:10}}</p>
                                             </div>
                                         </li>
+                                        
+                                        {% if events.count < 2 %}
+                                              
+                                        <li>
+                                            <div class="header-post">
+                                                <div class="date">
+                                                    <span>{{e.start_date.day}} / {{e.start_date | date:"b"}}</span>
+                                                    {{e.start_date.year}}
+                                                </div>
+                                                <a href="#"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
+                                                
+                                            </div>
+                                            <div class="info-post">
+                                                <h4><a href="#">{{e.title}}</a></h4>
+                                                <p>{{e.brief|truncatewords:10}}</p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="header-post">
+                                                <div class="date">
+                                                    <span>{{e.start_date.day}} / {{e.start_date | date:"b"}}</span>
+                                                    {{e.start_date.year}}
+                                                </div>
+                                                <a href="#"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
+                                                
+                                            </div>
+                                            <div class="info-post">
+                                                <h4><a href="#">{{e.title}}</a></h4>
+                                                <p>{{e.brief|truncatewords:10}}</p>
+                                            </div>
+                                        </li>                         
+                                           {% endif %}
+                                           
+
+                                    {% empty %}
                                         <!-- End Item blog post -->
+
+                                         
+
+                                        
+
+                                       
 
                                         <!-- Item blog post -->  
                                         <li>
                                             <div class="header-post">
                                                 <div class="date">
-                                                    <span>08/jan</span>
-                                                    2014
+                                                    <span> Featured Evevent</span>
+                                                    
                                                 </div>
-                                                <a href="#"><img src="{% static "img/blog/2.jpg" %}" alt=""></a>
-                                                
-                                            </div>
+                                                     </div>
                                             <div class="info-post">
-                                               <h4><a href="#">Name Here</a></h4>
-                                                <p>The Grounds which also doubles as a sporting centre was borne.</p>
-                                            </div>
-                                        </li>
-                                        <!-- End Item blog post -->  
-
-                                        <!-- Item blog post -->  
-                                        <li>
-                                            <div class="header-post">
-                                                <div class="date">
-                                                    <span>08/jan</span>
-                                                    2014
-                                                </div>
-                                                <a href="#"><img src="{% static "img/blog/3.jpg" %}" alt=""></a>
-                                                
-                                            </div>
-                                            <div class="info-post">
-                                                <h4><a href="#">Name Here</a></h4>
-                                                <p>The Grounds which also doubles as a sporting centre was borne.</p>
+                                               <h4><a href="#">None</a></h4>
+                                                <p>No featured event listed.</p>
                                             </div>
                                         </li>
                                         <!-- End Item blog post -->
-
-                                        <!-- Item blog post -->  
-                                        <li>
-                                            <div class="header-post">
-                                                <div class="date">
-                                                    <span>08/jan</span>
-                                                    2014
-                                                </div>
-                                                <a href="#"><img src="{% static "img/blog/4.jpg" %}" alt=""></a>
-                                                
-                                            </div>
-                                            <div class="info-post">
-                                               <h4><a href="#">Name Here</a></h4>
-                                                <p>The Grounds which also doubles as a sporting centre was borne.</p>
-                                            </div>
-                                        </li>
-                                        <!-- End Item blog post -->
-
-                                        <!-- Item blog post -->  
-                                        <li>
-                                            <div class="header-post">
-                                                <div class="date">
-                                                    <span>08/jan</span>
-                                                    2014
-                                                </div>
-                                                <a href="#"><img src="{% static "img/blog/2.jpg" %}" alt=""></a>
-                                                
-                                            </div>
-                                            <div class="info-post">
-                                               <h4><a href="#">Name Here</a></h4>
-                                                <p>The Grounds which also doubles as a sporting centre was borne.</p>
-                                            </div>
-                                        </li>
-                                        <!-- End Item blog post -->
+                                    {% endfor %}
                                     </ul>
                                     <!-- End blog post-->  
                                 </div>
@@ -201,19 +172,89 @@
 
                                 <!-- Tab Two - Players Staff -->
                                 <div class="tab-pane" id="players-staff">
-                                    <h3>Players Staff</h3>
+                                    <h3>Players / Staff</h3>
                                     <!-- Item Players-->  
                                     <ul id="players-carousel" class="players ">
-                                        <!-- Item Player -->  
+                                        <!-- Item Player -->
+                                        {% for p in s_and_p %}
                                         <li class="item-player">
-                                            <img src="img/players/1.jpg" alt="" class="img-responsive">
+                                            <img src="{% cropped_thumbnail p "photo_thumb" %}" alt="" class="img-responsive">
                                             <div class="info-player">
-                                                <h4><a href="#">Name Here</a></h4>
+                                                <h4><a href="#">{{p.name}}</a></h4>
                                                 <div class="overlay-player">
-                                                    <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport </p>
+                                                    <p>{{p.profile}} </p>
                                                 </div>
                                             </div>
                                         </li>
+                                        {% if s_and_p.count < 2 %}
+                                            
+                                             <li class="item-player">
+                                            <img src="{% cropped_thumbnail p "photo_thumb" %}" alt="" class="img-responsive">
+                                            <div class="info-player">
+                                                <h4><a href="#">{{p.name}}</a></h4>
+                                                <div class="overlay-player">
+                                                    <p>{{p.profile}} </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                              <li class="item-player">
+                                            <img src="{% cropped_thumbnail p "photo_thumb" %}" alt="" class="img-responsive">
+                                            <div class="info-player">
+                                                <h4><a href="#">{{p.name}}</a></h4>
+                                                <div class="overlay-player">
+                                                    <p>{{p.profile}} </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                               <li class="item-player">
+                                            <img src="{% cropped_thumbnail p "photo_thumb" %}" alt="" class="img-responsive">
+                                            <div class="info-player">
+                                                <h4><a href="#">{{p.name}}</a></h4>
+                                                <div class="overlay-player">
+                                                    <p>{{p.profile}} </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                               
+                                    {% endif %}
+                                    
+                                     {% if s_and_p.count > 2 and s_and_p < 4 %}
+                                            
+                                             
+                                              <li class="item-player">
+                                            <img src="{% cropped_thumbnail p "photo_thumb" %}" alt="" class="img-responsive">
+                                            <div class="info-player">
+                                                <h4><a href="#">{{p.name}}</a></h4>
+                                                <div class="overlay-player">
+                                                    <p>{{p.profile}} </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                               <li class="item-player">
+                                            <img src="{% cropped_thumbnail p "photo_thumb" %}" alt="" class="img-responsive">
+                                            <div class="info-player">
+                                                <h4><a href="#">{{p.name}}</a></h4>
+                                                <div class="overlay-player">
+                                                    <p>{{p.profile}} </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                      {% if s_and_p.count == 3 %}
+                                            
+                                             
+ 
+                                               <li class="item-player">
+                                            <img src="{% cropped_thumbnail p "photo_thumb" %}" alt="" class="img-responsive">
+                                            <div class="info-player">
+                                                <h4><a href="#">{{p.name}}</a></h4>
+                                                <div class="overlay-player">
+                                                    <p>{{p.profile}} </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                    {% empty %}
                                         <!-- End Player post -->
 
                                         <!-- Item Player -->  
@@ -275,139 +316,14 @@
                                             </div>
                                         </li>
                                         <!-- End Player post -->
+                                    {% endfor %}
                                     </ul>
                                     <!-- End Item Players-->  
                                 </div>
                                 <!-- Tab Two - Players Staff -->
 
-                                <!-- Tab Theree - Club Teams -->
-                                <div class="tab-pane" id="club-news">
-                                    <h3>Club Teams</h3>
-                                    <!-- Clubs Carousel-->  
-                                    <ul id="clubs-carousel" class="clubs-teams">
-                                        <!-- Item carousel club -->  
-                                        <li class="row">
-                                            <!-- Item clubs --> 
-                                            <div class="col-sx-12 col-sm-6 col-md-6">
-                                                <div class="item-clubs">
-                                                    <div class="img-clubs">
-                                                        <img src="img/clubs-team/1.png" alt="" class="img-responsive">
-                                                    </div>
-                                                    <div class="info-clubs">
-                                                        <h4><a href="#">Team 1</a></h4>
-                                                        <p>Lorem ipsum dolor sit amet,ectetur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Item clubs --> 
-
-                                            <!-- Item clubs --> 
-                                            <div class="col-sx-12 col-sm-6 col-md-6">
-                                                <div class="item-clubs">
-                                                    <div class="img-clubs">
-                                                        <img src="img/clubs-team/2.png" alt="" class="img-responsive">
-                                                    </div>
-                                                    <div class="info-clubs">
-                                                        <h4><a href="#">Team 2</a></h4>
-                                                        <p>Lorem ipsum dolor sit amet, ctetur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Item clubs --> 
-
-                                            <!-- Item clubs --> 
-                                            <div class="col-sx-12 col-sm-6 col-md-6">
-                                                <div class="item-clubs">
-                                                    <div class="img-clubs">
-                                                        <img src="img/clubs-team/3.png" alt="" class="img-responsive">
-                                                    </div>
-                                                    <div class="info-clubs">
-                                                        <h4><a href="#">Team 3</a></h4>
-                                                        <p>Lorem ipsum dolor sit amet, coetur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Item clubs --> 
-
-                                            <!-- Item clubs --> 
-                                            <div class="col-sx-12 col-sm-6 col-md-6">
-                                                <div class="item-clubs">
-                                                    <div class="img-clubs">
-                                                        <img src="img/clubs-team/4.png" alt="" class="img-responsive">
-                                                    </div>
-                                                    <div class="info-clubs">
-                                                        <h4><a href="#">Team 4</a></h4>
-                                                        <p>Lorem ipsum dolor sit amet, contur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Item clubs --> 
-                                        </li>
-                                        <!-- End Item carousel club -->
-
-                                        <!-- Item carousel club -->  
-                                        <li class="row">
-                                            <!-- Item clubs --> 
-                                            <div class="col-sx-12 col-sm-6 col-md-6">
-                                                <div class="item-clubs">
-                                                    <div class="img-clubs">
-                                                        <img src="img/clubs-team/5.png" alt="" class="img-responsive">
-                                                    </div>
-                                                    <div class="info-clubs">
-                                                        <h4><a href="#">Team 5</a></h4>
-                                                        <p>Lorem ipsum dolor sit amet,ectetur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Item clubs --> 
-
-                                            <!-- Item clubs --> 
-                                            <div class="col-sx-12 col-sm-6 col-md-6">
-                                                <div class="item-clubs">
-                                                    <div class="img-clubs">
-                                                        <img src="img/clubs-team/6.png" alt="" class="img-responsive">
-                                                    </div>
-                                                    <div class="info-clubs">
-                                                        <h4><a href="#">Team 6</a></h4>
-                                                        <p>Lorem ipsum dolor sit amet, ctetur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Item clubs --> 
-
-                                            <!-- Item clubs --> 
-                                            <div class="col-sx-12 col-sm-6 col-md-6">
-                                                <div class="item-clubs">
-                                                    <div class="img-clubs">
-                                                        <img src="img/clubs-team/1.png" alt="" class="img-responsive">
-                                                    </div>
-                                                    <div class="info-clubs">
-                                                        <h4><a href="#">Team 7</a></h4>
-                                                        <p>Lorem ipsum dolor sit amet, coetur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Item clubs --> 
-
-                                            <!-- Item clubs --> 
-                                            <div class="col-sx-12 col-sm-6 col-md-6">
-                                                <div class="item-clubs">
-                                                    <div class="img-clubs">
-                                                        <img src="img/clubs-team/4.png" alt="" class="img-responsive">
-                                                    </div>
-                                                    <div class="info-clubs">
-                                                        <h4><a href="#">Team 8</a></h4>
-                                                        <p>Lorem ipsum dolor sit amet, contur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Item clubs --> 
-                                        </li>
-                                        <!-- End Item carousel club -->
-                                    </ul>
-                                    <!-- End Clubs Carousel-->  
-                                </div>
-                                <!-- Tab Theree - Club Teams -->
+                                
+                                    
                             </div>
                             <!-- Content Tabs -->
                         </div> 
@@ -456,25 +372,25 @@
                                 <div class="titles">
                                     <h4>Recent News</h4>
                                 </div>
-
+{% for n in  news %}
                                 <!-- Post Item -->
                                 <div class="post-item">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="img-hover">
-                                               <img src="img/blog/1.jpg" alt="" class="img-responsive">
+                                               <img src="{% cropped_thumbnail n "thumb_small" %}" alt="" class="img-responsive">
                                                <div class="overlay"><a href="#">+</a></div>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h4><a href="#">Believe It's Possible</a></h4>
+                                            <h4><a href="#">{{n.caption}}</a></h4>
                                             <p class="data-info">Aug 3, 2014  / <i class="fa fa-comments"></i><a href="#">0</a></p>
-                                            <p>"Whatever the mind can conceive and believe, it can achieve. In fact, the mind is such a powerful instrument; it can deliver to you literally everything you want.<br><a href="#">Read More [+]</a></p>                                            
+                                            <p>{{n.story|truncatewords:20}}<br><a href="#">Read More [+]</a></p>                                            
                                         </div>
                                    </div>
                                 </div>
                                  <!-- End Post Item -->
-
+{% empty %}
                                  <!-- Post Item -->
                                 <div class="post-item">
                                     <div class="row">
@@ -528,76 +444,12 @@
                                    </div>
                                 </div>
                                  <!-- End Post Item -->
+                                 
+                             {% endfor %}
                             </div>  
                             <!-- End Recent Post --> 
 
-                            <!-- Experts -->
-                            <div class="panel-box">                            
-                                <div class="titles">
-                                    <h4>Sports Experts</h4>
-                                </div>     
-
-                                <div class="row">
-                                    <div class="col-xs-6 col-sm-3 col-md-4 col-lg-3">
-                                        <div class="box-info">
-                                            <img src="img/experts/1.png" alt="" class="img-responsive">
-                                            <h5 class="entry-title"><a href="#">Name Here</a></h5>
-                                            <p class="date-box">Aug 15, 2014</p>
-                                        </div>
-                                    </div> 
-                                    <div class="col-xs-6 col-sm-3 col-md-4 col-lg-3">
-                                        <div class="box-info">
-                                            <img src="img/experts/1.png" alt="" class="img-responsive">
-                                            <h5 class="entry-title"><a href="#">Name Here</a></h5>
-                                            <p class="date-box">Aug 15, 2014</p>
-                                        </div>
-                                    </div> 
-                                    <div class="col-xs-6 col-sm-3 col-md-4 col-lg-3">
-                                        <div class="box-info">
-                                            <img src="img/experts/1.png" alt="" class="img-responsive">
-                                            <h5 class="entry-title"><a href="#">Name Here</a></h5>
-                                            <p class="date-box">Aug 15, 2014</p>
-                                        </div>
-                                    </div> 
-                                    <div class="col-xs-6 col-sm-3 col-md-4 col-lg-3">
-                                        <div class="box-info">
-                                            <img src="img/experts/1.png" alt="" class="img-responsive">
-                                           <h5 class="entry-title"><a href="#">Name Here</a></h5>
-                                            <p class="date-box">Aug 15, 2014</p>
-                                        </div>
-                                    </div> 
-                                    <div class="col-xs-6 col-sm-3 col-md-4 col-lg-3">
-                                        <div class="box-info">
-                                            <img src="img/experts/1.png" alt="" class="img-responsive">
-                                            <h5 class="entry-title"><a href="#">Name Here</a></h5>
-                                            <p class="date-box">Aug 15, 2014</p>
-                                        </div>
-                                    </div> 
-                                    <div class="col-xs-6 col-sm-3 col-md-4 col-lg-3">
-                                        <div class="box-info">
-                                            <img src="img/experts/1.png" alt="" class="img-responsive">
-                                            <h5 class="entry-title"><a href="#">Name Here</a></h5>
-                                            <p class="date-box">Aug 15, 2014</p>
-                                        </div>
-                                    </div> 
-                                    <div class="col-xs-6 col-sm-3 col-md-4 col-lg-3">
-                                        <div class="box-info">
-                                            <img src="img/experts/1.png" alt="" class="img-responsive">
-                                            <h5 class="entry-title"><a href="#">Name Here</a></h5>
-                                            <p class="date-box">Aug 15, 2014</p>
-                                        </div>
-                                    </div> 
-                                    <div class="col-xs-6 col-sm-3 col-md-4 col-lg-3">
-                                        <div class="box-info">
-                                            <img src="img/experts/1.png" alt="" class="img-responsive">
-                                            <h5 class="entry-title"><a href="#">Name Here</a></h5>
-                                            <p class="date-box">Aug 15, 2014</p>
-                                        </div>
-                                    </div> 
-
-                                </div>                          
-                            </div>  
-                            <!-- End Experts -->  
+                             
                         </div>
                          <!-- End content Left -->
 
@@ -607,26 +459,26 @@
                             <div class="panel-box">
                             
                                 <div class="titles">
-                                    <h4>Locations</h4>
+                                    <h4>1212 Spots</h4>
                                 </div>
                                 <!-- Locations Carousel --> 
                                 <ul class="single-carousel">    
                                     <li>
-                                        <img src="img/blog/1.jpg" alt="" class="img-responsive">
+                                        <img src="{% static 'img/blog/1.jpg' %}" alt="" class="img-responsive">
                                         <div class="info-single-carousel">
                                             <h4>Name Here</h4>
                                             <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ and the exhilaration of horse racing to thrill seekers in the booming metropolis of the Federal Capital Territory (FCT). As such,</p>
                                         </div>
                                     </li>
                                     <li>
-                                        <img src="img/blog/2.jpg" alt="" class="img-responsive">
+                                        <img src="{% static 'img/blog/2.jpg' %}" alt="" class="img-responsive">
                                         <div class="info-single-carousel">
                                             <h4>Name Here</h4>
                                             <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ and the exhilaration of horse racing to thrill seekers in the booming metropolis of the Federal Capital Territory (FCT). As such,</p>
                                         </div>
                                     </li> 
                                     <li>
-                                        <img src="img/blog/3.jpg" alt="" class="img-responsive">
+                                        <img src="{% static 'img/blog/3.jpg' %}" alt="" class="img-responsive">
                                         <div class="info-single-carousel">
                                             <h4>Name Here</h4>
                                             <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ and the exhilaration of horse racing to thrill seekers in the booming metropolis of the Federal Capital Territory (FCT). As such,</p>
@@ -640,31 +492,21 @@
                             <!-- Video presentation -->
                             <div class="panel-box">
                                 <div class="titles">
-                                    <h4>Presentation</h4>
+                                    <h4>Videos</h4>
                                 </div>
                                 <!-- Locations Video --> 
                                 <div class="row">
+                                           <iframe class="video"  src="//www.youtube.com/embed/HkJgx-GqzOo"></iframe>
                                     <div class="col-md-12">
-                                        <h4>Name Here</h4>
-                                            <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ and the exhilaration of horse racing to thrill seekers in the booming metropolis of the Federal Capital Territory (FCT). As such,</p>
+                                        <h4>Dubai World Cup 2014 </h4>
+                                            <p> Worlds Richest Horse Race</p>
                                     </div>
                                 </div>
                                 <!-- End Locations Video --> 
                             </div>  
                             <!-- End Video presentation-->
 
-                            <!-- Widget Text-->
-                            <div class="panel-box">
-                                <div class="titles">
-                                    <h4>Widget Text</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful</p>
-                                    </div>
-                                </div>
-                            </div>  
-                            <!-- End Widget Text-->
+                            
                         </aside>
                         <!-- End content Sidebar Center -->
 
@@ -673,7 +515,7 @@
                             <!-- Diary -->
                             <div class="panel-box">
                                 <div class="titles">
-                                    <h4><i class="fa fa-calendar"></i>Diary</h4>
+                                    <h4><i class="fa fa-calendar"></i>Upcoming</h4>
                                 </div>
                                 <!-- List Diary --> 
                                 <div class="row">
@@ -682,14 +524,14 @@
                                         <ul class="list-diary">
                                             <!-- Item List Diary --> 
                                             <li>
-                                                <h5>Team Name <span>06-05-2014 - 11:00</span></h5>
+                                                <h5>Team Name <span>06-05-2015 - 11:00</span></h5>
                                                 <ul class="club-logo">
                                                     <li>
-                                                        <img src="img/clubs-logos/1.png" alt="">
+                                                        <img src="{% static 'img/clubs-logos/1.png' %}" alt="">
                                                         <h6>Real Madrid</h6>
                                                     </li>
                                                     <li>
-                                                        <img src="img/clubs-logos/2.png" alt="">
+                                                        <img src="{% static 'img/clubs-logos/2.png' %}" alt="">
                                                         <h6>Valladolid</h6>
                                                     </li>
                                                 </ul>
@@ -698,14 +540,14 @@
 
                                             <!-- Item List Diary --> 
                                             <li>
-                                                <h5>Team Name <span>06-05-2014 - 11:00</span></h5>
+                                                <h5>Team Name <span>06-05-2015 - 11:00</span></h5>
                                                 <ul class="club-logo">
                                                     <li>
-                                                        <img src="img/clubs-logos/1.png" alt="">
+                                                        <img src="{% static 'img/clubs-logos/1.png' %}" alt="">
                                                         <h6>Real Madrid</h6>
                                                     </li>
                                                     <li>
-                                                        <img src="img/clubs-logos/2.png" alt="">
+                                                        <img src="{% static 'img/clubs-logos/2.png' %}" alt="">
                                                         <h6>Valladolid</h6>
                                                     </li>
                                                 </ul>
@@ -717,11 +559,11 @@
                                                <h5>Team Name <span>06-05-2014 - 11:00</span></h5>
                                                 <ul class="club-logo">
                                                     <li>
-                                                        <img src="img/clubs-logos/1.png" alt="">
+                                                        <img src="{% static 'img/clubs-logos/1.png' %}" alt="">
                                                         <h6>Real Madrid</h6>
                                                     </li>
                                                     <li>
-                                                        <img src="img/clubs-logos/2.png" alt="">
+                                                        <img src="{% static 'img/clubs-logos/2.png' %}" alt="">
                                                         <h6>Valladolid</h6>
                                                     </li>
                                                 </ul>

@@ -59,6 +59,8 @@ INSTALLED_APPS = (
     'accounts',
     'teams',
     'sliders',
+    'news',
+    'partners',
     
 )
 
