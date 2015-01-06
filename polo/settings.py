@@ -34,7 +34,7 @@ TEMPLATE_DEBUG = True
 if DEBUG == True:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ['.polo.webfactional.com']
+    ALLOWED_HOSTS = ['.lep12.webfactional.com']
 
 TEMPLATE_DEBUG = True
 
