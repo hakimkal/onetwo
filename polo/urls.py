@@ -15,8 +15,10 @@ urlpatterns = patterns('',
     url(r'^events/' ,include('events.urls')),
     url(r'^teams/' ,include('teams.urls')),
     url(r'^sliders/' ,include('sliders.urls')),
+    url(r'^multimedia', include('mdias.urls',namespace='multimedia')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^manage/', include(admin.site.urls)),
+    
 )
 #for serving media files
 from polo import settings  

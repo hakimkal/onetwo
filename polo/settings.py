@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'sliders',
     'news',
     'partners',
+    'mdias',
     
 )
 
