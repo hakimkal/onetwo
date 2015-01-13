@@ -9,7 +9,7 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'Photos'
-        db.create_table(u'multimedia_photos', (
+        db.create_table(u'mdias_photos', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('photo', self.gf(u'django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
             ('photo_thumb', self.gf(u'django.db.models.fields.CharField')(max_length=255, blank=True)),
@@ -20,12 +20,12 @@ class Migration(SchemaMigration):
             ('caption', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
             ('brief', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
         ))
-        db.send_create_signal(u'multimedia', ['Photos'])
+        db.send_create_signal(u'mdias', ['Photos'])
 
 
     def backwards(self, orm):
         # Deleting model 'Photos'
-        db.delete_table(u'multimedia_photos')
+        db.delete_table(u'mdias_photos')
 
 
     models = {
@@ -65,7 +65,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'multimedia.photos': {
+        u'mdias.photos': {
             'Meta': {'object_name': 'Photos'},
             'brief': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'caption': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
@@ -79,4 +79,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['multimedia']
+    complete_apps = ['mdias']
