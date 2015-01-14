@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^events/' ,include('events.urls')),
     url(r'^teams/' ,include('teams.urls')),
     url(r'^sliders/' ,include('sliders.urls')),
-    url(r'^multimedia', include('mdias.urls',namespace='multimedia')),
+    url(r'^multimedia/', include('mdias.urls',namespace='multimedia')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^manage/', include(admin.site.urls)),
     
@@ -27,3 +27,13 @@ urlpatterns += patterns(
     (r'media/(?P<path>.*)',
     'serve',
     {'document_root': settings.MEDIA_ROOT}), )
+
+
+#for debug toolbar
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += patterns('',
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )
+          

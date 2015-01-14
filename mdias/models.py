@@ -5,6 +5,7 @@ from datetime import datetime
 
 
 class Photos(models.Model):
+    
     TAGS = (
         
         ('events','events'),
@@ -17,7 +18,12 @@ class Photos(models.Model):
         ('games','games'),
         
     )
-    photo = ImageCropField(blank=True, null=True, upload_to='multimedia_photos')
+    class Meta:
+        #app_label = 'Multimedia'
+        verbose_name = 'Multimedia Photo'
+        verbose_name_plural ='Multimedia Photos'
+    photo = models.ImageField(blank=True, null=True, upload_to='multimedia_photos')  
+    #photo = ImageCropField(blank=True, null=True, upload_to='multimedia_photos')
     # size is "width x height"
     photo_thumb = ImageRatioField('photo', '800x533')
     tag =  models.CharField(default = '1212', choices=TAGS,max_length=30)

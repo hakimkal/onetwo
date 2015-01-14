@@ -6,7 +6,99 @@
 {% block content %}
    
           
+ <!-- Section Title -->
+            <section class="section-title img-gallery">
+                <div class="overlay-bg"></div> <div class="container">
+                    <h1> Multimedia Photos </h1>
+                </div>
+            </section> <!-- End Section Title -->
 
+            <!-- Section Area - Content Central --> <section
+            class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="index.html">Home</a></li> <li>/</li>
+                            <li> Multimedia Photos </li>
+                            
+                                                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="img/img-theme/shp.png" class="img-responsive"
+                    alt="">
+                </div>
+
+                <!-- Content Central --> <div class="container">
+                    <!-- Nav Filters --> <div class="portfolioFilter">
+                        <a href="#" data-filter="*" class="current">Show All</a>
+                         
+                        {% for t in tags %}
+                            <a href="#{{t}}"
+                            data-filter=".{{t}}">{{t|title}}</a>
+                        {% endfor %}
+                    </div> <!-- End Nav Filters -->
+
+                    <!-- Items Gallery filters--> <div
+                    class="portfolioContainer">
+                        {% for item in photos_list %} <!-- Item Gallery--> <div
+                        class="col-xs-6 col-sm-6 col-md-3 {{item.tag }}">
+                            <div class="img-hover">
+                                <img src="{% cropped_thumbnail item "photo_thumb" %}" alt="" class="img-responsive">
+                                <div class="overlay">
+                                    {% if item.caption or item.brief %}
+                                    <a rel="multimedia_photos" title="{{item.caption}}:: <br/> {{item.brief}}" href="{% cropped_thumbnail item "photo_thumb" %}"
+                                class="fancybox">+</a>
+                            {% else %}
+                                
+                                 <a rel="multimedia_photos"  href="{% cropped_thumbnail item "photo_thumb" %}"
+                                class="fancybox">+</a>
+                                 
+                            {% endif %}
+                                
+                                </div>
+                            </div>
+                        </div> <!-- End Item Gallery-->
+ 
+                       
+                        
+                    {% endfor %} </div> <!-- End Items Gallery filters-->
+                    
+                    
+                  
+ 
+ 
+ 
+ <!-- Pagination -->
+ <ul class="pagination no-margin">
+     {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">«</a></li>
+  
+{% endif %}
+                                <li class="active"><a href="#">Pg {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+                                {% for page in page_obj.paginator.page_range %}
+     
+   
+     <li><a href="?page={{ page }}"> {{ page }}</a></li>
+{% endfor %}
+                                
+                                
+                                {% if page_obj.has_next %}
+  
+                                <li><a href="?page={{ page_obj.next_page_number }}">»</a></li>
+                                
+                                {% endif %}
+                            </ul>
+ <!-- End Pagination -->
+                </div> <!-- End Content Central -->
+
+                <!-- Newsletter -->
+               {% include 'nl_subscriber.html' %}
+                <!-- End Newsletter -->
+            </section> <!-- End Section Area - Content Central -->
             
                
             

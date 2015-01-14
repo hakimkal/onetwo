@@ -7,7 +7,7 @@ from mdias.models import Photos
 
 class MultimediaPhotoAdmin(ImageCroppingMixin,admin.ModelAdmin):
     save_on_top = True
-    list_display= ('caption','brief','photo','created', 'modified', 'tag')
+    list_display= ('id','caption','brief','photo','created', 'modified', 'tag')
     exclude = ('user',)
     
     
