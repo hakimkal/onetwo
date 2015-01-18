@@ -10,6 +10,7 @@ class PublicPageAdmin(admin.ModelAdmin):
     verbose_singular_name = 'Pages'
     verbost_plural_name  = 'Pages'
     save_on_top =  True
+    
     def save_model(self, request, obj, form, change):
         obj.slug = obj.slug.lower()
         if not change:
