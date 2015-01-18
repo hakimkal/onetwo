@@ -158,7 +158,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.i18n",
      
 )
-
+DEBUG_TOOLBAR_PATCH_SETTINGS = False 
 
 GRAPPELLI_ADMIN_TITLE = "1212 Polo Turf Admin"
 
