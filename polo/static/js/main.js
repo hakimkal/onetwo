@@ -12,7 +12,7 @@ $(document).ready(function($) {
 
   $("#twitter").tweet({
       modpath: 'js/twitter/index.php',
-      username: "envato", // Change for Your Username
+      username: "hakeemhal", // Change for Your Username
       count: 5,
       loading_text: "Loading tweets..."
   });
