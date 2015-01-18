@@ -4,19 +4,28 @@
                             <div class="col-md-12">
                                 <div class="text-center">
                                     <h2>Enter your e-mail and <span class="text-resalt">subscribe</span> to our newsletter.</h2>
-                                    <p>Duis non lorem porta,  eros sit amet, tempor sem. Donec nunc arcu, semper a tempus et, consequat.</p>
+                                    <p>We would only contact you with important details on our important activities...We hate SPAM!</p>
                                 </div>
-                                <form id="newsletterForm" action="php/mailchip/newsletter-subscribe.php">
+                                <form id="newsletterForm" action="{% url 'nladd' %}" method="post">
+                                      {% csrf_token %}
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="input-group">
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-envelope"></i>
                                                 </span>
-                                                <input class="form-control" placeholder="Your Name" name="name"  type="text" required="required">
+                                                <input class="form-control" placeholder="Firstname" name="firstname"  type="text" required="required">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-envelope"></i>
+                                                </span>
+                                                <input class="form-control" placeholder="Lastname" name="lastname"  type="text" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
                                             <div class="input-group">
                                                 <span class="input-group-addon">
                                                     <i class="fa fa-envelope"></i>

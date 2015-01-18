@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
 import publicpages.views
+import nlsubscribers.views 
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -19,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^multimedia/', include('mdias.urls',namespace='multimedia')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^manage/', include(admin.site.urls)),
+    url(r'^nladd',nlsubscribers.views.nladd, name = "nladd"),
     
 )
 #for serving media files

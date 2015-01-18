@@ -62,6 +62,7 @@ INSTALLED_APPS = (
     'news',
     'partners',
     'mdias',
+    'nlsubscribers',
     'debug_toolbar',
 
     
