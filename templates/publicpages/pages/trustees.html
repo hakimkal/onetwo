@@ -1,0 +1,142 @@
+{% extends 'homebase.html' %}
+{% load staticfiles %}
+{% load cropping %}
+{% block title %} 1212 {{publicpage.title}}{% endblock %}
+{% block content %}
+
+       <!-- Section Title -->           
+            <section class="section-title img-about">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>1212 Trustees</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>/</li>
+                            <li>1212 Trustees</li>                                       
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="{% static 'img/img-theme/shp.png' %}" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container padding-top">
+                    <div class="row">
+                        
+                        <!-- content Players --> 
+                        <div class="col-md-12">                     
+                            <!-- Panel Box -->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4><i class="fa fa-group"></i>Advisory Board/ Management Team</h4>
+                                </div>
+                                <!-- Players --> 
+                                <div class="row">
+                           
+      <div class="col-md-12">
+                                        <!-- Item Players-->  
+                                        <ul id="players-carousel" class="players">
+                                            
+                                            {% for m in management %}
+                                            <!-- Item Player -->  
+                                            <li class="item-player">
+                                                <img src="{% cropped_thumbnail m "photo_thumb" %}" alt="" class="img-responsive">
+                                                <div class="info-player">
+                                                    <h4><a href="#">{{m.name}}</a></h4>
+                                                    {% if not m.designation == None  and m.designation != "" %}
+                                                    <h5><span>{{m.designation}}</span></h5>
+                                                    {% endif %}
+                                                    <div class="overlay-player">
+                                                        <p>{{m.profile|truncatewords:20}} </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- End Player post -->
+                                            {% empty %}
+                                            <!-- Item Player -->  
+                                            <li class="item-player">
+                                                <img src="img/players/2.jpg" alt="" class="img-responsive">
+                                                <div class="info-player">
+                                                    <h4><a href="#">Name Here</a></h4>
+                                                    <div class="overlay-player">
+                                                        <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- End Player post -->
+
+                                            <!-- Item Player -->  
+                                            <li class="item-player">
+                                                <img src="img/players/3.jpg" alt="" class="img-responsive">
+                                                <div class="info-player">
+                                                     <h4><a href="#">Name Here</a></h4>
+                                                    <div class="overlay-player">
+                                                        <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- End Player post -->
+
+                                            <!-- Item Player -->  
+                                            <li class="item-player">
+                                                <img src="img/players/4.jpg" alt="" class="img-responsive">
+                                                <div class="info-player">
+                                                     <h4><a href="#">Name Here</a></h4>
+                                                    <div class="overlay-player">
+                                                        <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- End Player post -->
+
+                                            <!-- Item Player -->  
+                                            <li class="item-player">
+                                                <img src="img/players/5.jpg" alt="" class="img-responsive">
+                                                <div class="info-player">
+                                                     <h4><a href="#">Name Here</a></h4>
+                                                    <div class="overlay-player">
+                                                        <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- End Player post -->
+
+                                            <!-- Item Player -->  
+                                            <li class="item-player">
+                                                <img src="img/players/6.jpg" alt="" class="img-responsive">
+                                                <div class="info-player">
+                                                     <h4><a href="#">Name Here</a></h4>
+                                                    <div class="overlay-player">
+                                                        <p>The Grounds which also doubles as a sporting centre was borne out of a desire to bring the beautiful game of Polo ‘Sport of Kings’ </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- End Player post -->
+                                            
+                                        {% endfor %}
+                                        </ul>
+                                        <!-- End Item Players-->  
+                                    </div>
+                                </div>
+                                <!-- End Players -->                                
+                            </div>  
+                            <!-- End Panel Box --> 
+                        </div>
+                        <!-- End Players -->
+                    </div>
+                </div>
+                  </section>
+            <!-- End Section Area - Content Central -->
+      
+                        {% endblock %}

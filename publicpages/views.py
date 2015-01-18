@@ -40,6 +40,12 @@ class StaticPage(DetailView):
     slug_url_kwarg = 'slug'
     template_name_field = 'html_template'
     
+    def get_context_data(self,**kwargs):
+        ctx = super(StaticPage,self).get_context_data(**kwargs)
+        ctx['management'] = Team.objects.filter(group='Management')
+        
+        return ctx
+    
     def get_queryset(self):
         queryset = super(StaticPage, self).get_queryset()
         if self.kwargs.get('slug') != "" :

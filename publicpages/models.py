@@ -18,6 +18,7 @@ def get_html_templates():
            
             
             for f in alldirs:
+                
                 #print f
                 #os.path.isfile(f) did not work
                 if not os.path.isdir(f):
