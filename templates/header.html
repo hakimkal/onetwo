@@ -52,10 +52,10 @@
                             
                             
                              <li>
-                                <a href="#">Horse Racing</a>
+                                <a href="{% url 'pages:page' 'horseracing' %}">Horse Racing</a>
                                 <div class="sf-mega">
                                     <div class="col-md-3">
-                                        <h4>Prominent</h4>
+                                        <h4>Prominent Challenge Cups</h4>
                                         <ul>                                                
                                             <li><a href="#"></a></li>
                                             <li><a href="#">Abuja Derby Cup</a></li>
@@ -71,33 +71,33 @@
                                       <h4>Sultan Abubakar Race Track</h4>
                                       <div class="img-hover">
                                          <img src="{% static "img/thumbs/racing_thumb.jpg"%}" alt="" class="img-responsive">
-                                         <div class="overlay"><a href="#">+</a></div>
+                                         <div class="overlay"><a href="{% url 'pages:page' 'horseracing' %}">+</a></div>
                                       </div>
                                     </div>
 
-                                    <div class="col-md-3">
+                                   <!-- <div class="col-md-3">
                                       <h4>Horsemen & Trainers</h4>
                                       <div class="img-hover">
                                          <img src="{% static 'img/blog/2.jpg' %}" alt="" class="img-responsive">
-                                         <div class="overlay"><a href="sports.html">+</a></div>
+                                         <div class="overlay"><a href="#">+</a></div>
                                       </div>
-                                    </div>
-
+                                    </div>-->
+<!--
                                     <div class="col-md-3">
                                       <h4>Racing News</h4>
                                       <div class="img-hover">
                                          <img src="{% static 'img/blog/3.jpg' %}" alt="" class="img-responsive">
-                                         <div class="overlay"><a href="sports.html">+</a></div>
+                                         <div class="overlay"><a href="#">+</a></div>
                                       </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </li>
                             
                              <li>
-                                <a href="#">Tournaments</a>
+                                <a href="{% url 'pages:page' 'tournaments' %}">Tournaments</a>
                                 <div class="sf-mega">
                                     <div class="col-md-3">
-                                        <h4>Prominent</h4>
+                                        <h4>Prominent Challenge Cups</h4>
                                         <ul>                                                
                                             <li><a href="#"></a></li>
                                             <li><a href="#">Abuja Open Cup</a></li>
@@ -113,14 +113,14 @@
                                       <h4>Exhilarating Polo </h4>
                                       <div class="img-hover">
                                          <img src="{% static 'img/thumbs/polo_thumb.jpg' %}" alt="" class="img-responsive">
-                                          <div class="overlay"><a href="sports.html">+</a></div>
+                                          <div class="overlay"><a href="{% url 'pages:page' 'tournaments' %}">+</a></div>
                                       </div></div>
                                     <div class="col-md-3">
                                       <h4>Polo Tournaments</h4>
                                       <div class="img-hover">
                                               1212 Organizes a number of prestigious tournaments , horse racing events  and other equisterion
                                         tournaments. Prominent among which are:
-                                         <div class="overlay"><a href="sports.html">+</a></div>
+                                         <div class="overlay"><a href="{% url 'pages:page' 'tournaments' %}">+</a></div>
                                       </div>
                                     </div>
 
