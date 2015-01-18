@@ -1,0 +1,61 @@
+{% extends 'homebase.html' %}
+{% load staticfiles %}
+{% block title %} 1212 {{publicpage.title}}{% endblock %}
+{% block content %}
+ <!-- Section Title -->           
+            <section class="section-title img-feature">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>{{publicpage.title}}</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>/</li>
+                            <li><a href="{{request.path}}">Facilities</a></li>
+                                                                  
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+                </div>
+
+
+
+                <!-- Content Central -->
+                <section class="container padding-top-mini">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Content Text-->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4>
+                                        {% if publicpage.sub_heading != None %}
+                                        {{publicpage.sub_heading}}
+                                        {% else %}
+                                        {{ publicpage.title }}
+                                        {% endif %}
+                                    </h4>
+                                </div>
+                                {{publicpage.content|safe}}
+                            <!-- End Content Text-->
+                        </div>
+                    </div>
+                    <!-- End Container-->
+                    
+                      <!-- Newsletter -->
+               {% include 'nl_subscriber.html' %}
+                <!-- End Newsletter -->
+                </section>
+                <!-- End Content Central -->
+
+{% endblock %}
