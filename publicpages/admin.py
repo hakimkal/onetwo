@@ -4,7 +4,8 @@ from publicpages.models import PublicPage
 class PublicPageAdmin(admin.ModelAdmin):
     exlude =('user',)
     actions_on_top = True
-    list_display= ('title','content','created', 'modified', 'slug','publish','html_template')
+    list_display= ('title','content','created',
+                   'modified', 'slug','publish','html_template','sub_heading')
     exclude = ('user',)
     verbose_singular_name = 'Pages'
     verbost_plural_name  = 'Pages'
