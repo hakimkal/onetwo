@@ -1,0 +1,131 @@
+{% extends 'homebase.html' %}
+{% load staticfiles %}
+{% load cropping %}
+{% block title %} 1212 Contact Us {% endblock %}
+{% block content %}
+
+            <!-- Section Title -->           
+            <section class="section-title img-contact">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>Contact Us</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li>/</li>
+                            <li>Contact Us</li>                                       
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="{% static 'img/img-theme/shp.png' %}" class="img-responsive" alt="">
+                </div>
+
+                <!-- Google Map --> 
+                <div id="map"></div>
+                <!-- End Google Map --> 
+
+                <!-- Content Central -->
+                <section class="container">
+                    <div class="row padding-top"> 
+                        <!-- Left Content -->
+                        <div class="col-md-4">
+                            <aside class="panel-box">
+                                <div class="titles">
+                                    <h4>Address </h4>
+                                </div>
+                                <address>
+                                  
+
+ 
+                                  <strong>1212 Polo & Turf</strong><br>
+                                  <i class="fa fa-map-marker"></i><strong>Address: </strong> 1539 Ahamadu Bello Way
+ 
+<br>
+                                  <i class="fa fa-plane"></i><strong>City: </strong>Abuja<br>
+                                  <i class="fa fa-phone"></i> <abbr title="Phone">P:</abbr> (+234) 809 -823 - 3966
+                                </address>
+                            </aside>
+
+                            <aside class="panel-box">
+                                <div class="titles">
+                                    <h4>Email Contact</h4>
+                                </div>
+                                <address>
+                                  <i class="fa fa-envelope"></i><strong>Email:</strong><a href="mailto:#"> info@1212poloturf.com</a><br>
+                                    </address>
+                            </aside>
+                        </div>
+                        <!-- End Left Content -->
+
+                        <!-- Right Content -->
+                        <div class="col-md-8">
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4>Contact Form</h4>
+                                </div>
+                                <!-- Form Contact -->
+                                <form class="form-theme" method="post" action="{% url 'pages:contact' %}">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label>Your name *</label>
+                                                <input type="text"  required="required" value="" maxlength="100" class="form-control" name="name" id="name">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label>Your email address *</label>
+                                                <input type="email"  required="required" value="" maxlength="100" class="form-control" name="email" id="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label>Subject *</label>
+                                                <input maxlength="200"  required="required" class="form-control" name="subject"   />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <label>Comment *</label>
+                                                <textarea maxlength="5000" rows="10" class="form-control" name="message"  style="height: 138px;" required ></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="submit" value="Send Message" class="btn btn-lg btn-primary">
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- End Form Contact --> 
+                                <div class="result"></div>
+                            </div>
+                        </div> 
+                        <!-- End Right Content -->         
+                    </div>    
+                </section>
+                <!-- End Content Central -->
+
+              
+                      <!-- Newsletter -->
+               {% include 'nl_subscriber.html' %}
+                <!-- End Newsletter -->
+            </section>
+            <!-- End Section Area - Content Central -->
+            
+            
+      {% endblock %}
