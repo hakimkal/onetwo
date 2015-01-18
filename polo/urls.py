@@ -9,11 +9,11 @@ urlpatterns = patterns('',
     # url(r'^$', 'polo.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
    # url('',publicpages.views.current_datetime,name="home"),
-   
+    url(r'^pages/' ,include('publicpages.urls', namespace="pages")),
     url(r'^$', publicpages.views.current_datetime, name="home"),
     url(r'^about/$',publicpages.views.about, name="about"),
     url(r'^events/' ,include('events.urls')),
-    url(r'^pages/' ,include('publicpages.urls', namespace="pages")),
+    
     url(r'^teams/' ,include('teams.urls')),
     url(r'^sliders/' ,include('sliders.urls')),
     url(r'^multimedia/', include('mdias.urls',namespace='multimedia')),
