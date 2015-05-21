@@ -94,7 +94,7 @@
                             </li>
                             
                              <li>
-                                <a href="{% url 'pages:page' 'tournaments' %} ">Tournaments</a>
+                                <a href="{% url 'pages:page' 'tournaments' %} "> Polo</a>
                                 <div class="sf-mega">
                                     <div class="col-md-3">
                                         <h4>Prominent Challenge Cups</h4>
@@ -177,14 +177,21 @@
                                 <a href="#">Facilities</a>
                                 <ul class="sub-current">
                                     <li>
+                                        <a href="{% url 'pages:page' 'race_track' %}">Horse Racing Track</a>
+                                    </li>
+                                    
+                                     <li>
+                                        <a href="{% url 'pages:page' 'parkinglot' %}">Parking Lot</a>
+                                    </li>
+                                    
+                                    {% comment %}
+                                    <li>
                                         <a href="{% url 'pages:page' 'terrace_lounge' %}">Terrace Lounge</a>
                                     </li>
                                     <li>
                                         <a href="{% url 'pages:page' 'turf_club' %}">Turf Club</a>
                                     </li>
-                                    <li>
-                                        <a href="{% url 'pages:page' 'race_track' %}">Race Track</a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="{% url 'pages:page' 'polo_field' %}">Polo Field</a>
                                     </li>
@@ -194,6 +201,7 @@
                                     <li>
                                         <a href="{% url 'pages:page' 'vet_services' %}">Vet Services</a>
                                     </li>
+                                    {% endcomment %}
                                 </ul>
                             </li> 
                             
