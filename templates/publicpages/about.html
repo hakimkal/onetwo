@@ -179,10 +179,16 @@
                                     <h2>Partners and Sponsors</h2>
                                     <p>We have fellow lovers of the great sports of polo and horses as partners & sponsors </p>
                                 </div>
+                                {% comment %}
+                                    <a href="{{s.url}}"><img src="{% cropped_thumbnail s "thumb_small" %}"></a>
+                                    {% endcomment %}
+                                    
                                 <ul id="sponsors" class="tooltip-hover">
                                     {% for s in partners %}
                                     <li data-toggle="tooltip" title data-original-title="{{s.name}}">
-                                        <a href="{{s.url}}"><img src="{% cropped_thumbnail s "thumb_small" %}"></a>
+                                    
+                                     <a href="{{s.url}}"><img src="{{MEDIA_URL}}{{s.logo}}"></a>
+                                    
                                     
                                     </li>
                                     {% empty %}
