@@ -29,7 +29,7 @@ class Slider(models.Model):
     category = models.CharField(max_length=50, default='Home',choices=CAT_OPTS)
     created = models.DateTimeField(auto_now=False, auto_now_add=True,default=datetime.now())
     modified = models.DateTimeField(auto_now=True, auto_now_add=False, default=datetime.now())
-    position = models.IntegerField(choices=  pos_range , default=0, unique=True)
+    position = models.IntegerField(choices=  pos_range , default=0)
     
     def __unicode__(self):
         if self.title is not None:

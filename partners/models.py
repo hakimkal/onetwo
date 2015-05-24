@@ -14,7 +14,7 @@ class PartnerAndSponsor(models.Model):
     modified = models.DateTimeField(default=datetime.now(),auto_now=True, auto_now_add=False)
     url = models.URLField(blank= True)
     category = models.CharField(choices = GROUP, max_length=40)
-    thumb_small = ImageRatioField('logo', '187x95')
+    thumb_small = ImageRatioField('logo', '190x95')
     thumb_big = ImageRatioField('logo', '174x190')
     user = models.ForeignKey(get_user_model())
     
