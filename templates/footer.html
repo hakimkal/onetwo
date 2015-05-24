@@ -8,8 +8,23 @@
                         <!-- Twitter Wiguet-->
                         <div class="col-xs-12 col-sm-7 col-md-3 col-lg-4">
                             <div class="divisor-footer">
-                                <i class="fa fa-twitter twit-list"></i>
-                                <h4>Latest Tweet</h4>
+                                <h4>Partners & Sponsors</h4>
+                                
+                                 <ul id="sponsors" class="tooltip-hover">
+                                    {% for s in partners %}
+                                    <li data-toggle="tooltip" title data-original-title="{{s.name}}">
+                                    
+                                     <a href="{{s.url}}"><img src="{{MEDIA_URL}}{{s.logo}}"></a>
+                                    
+                                    
+                                    </li>
+                                    
+                                    
+                                    {% empty %}
+                                    
+                                      
+                                              {% endfor %}       
+                                         </ul>
                                 {% comment %}
                                 <div class="twiiter_text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
