@@ -168,7 +168,7 @@ $(document).ready(function($) {
 
    $("#sponsors").owlCarousel({
        autoPlay: 3200,      
-       items : 6,
+       items : 1,
        navigation: false,
        itemsDesktop : [1199,5],
        itemsDesktopSmall : [1024,4],
