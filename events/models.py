@@ -2,7 +2,14 @@ from django.db import models
 from image_cropping import ImageRatioField
 from django.contrib.auth import get_user_model
 from datetime import datetime
-# Create your models here.
+
+BOOL_OPTS = (
+        (True, 'Yes')
+        ,
+        (False, 'No'),
+        
+    )
+
 class Event(models.Model):
     user = models.ForeignKey(get_user_model())
     title = models.CharField(max_length=400)
@@ -10,6 +17,10 @@ class Event(models.Model):
     event_thumb_small = ImageRatioField('image','800x533')
     event_thumb = ImageRatioField('image', '1600x1066')
     brief = models.TextField(null=True, blank=True)
+    publish = models.BooleanField(choices=BOOL_OPTS, default = True)
+    event_pdf = models.FileField(blank= True, null=True,upload_to="events_documents")
+    event_pdf_title = models.CharField( max_length=255,blank= True, null=True)
+    
     start_date =  models.DateTimeField()
     end_date = models.DateTimeField()
     location = models.CharField(max_length=255,null=True)

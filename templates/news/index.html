@@ -1,0 +1,133 @@
+{% extends 'homebase.html' %}
+{% load staticfiles %}
+{% load cropping %}
+{% block title %} 1212 Polo News {% endblock %}
+{% block content %}
+
+
+ <!-- Section Title -->           
+            <section class="section-title img-news">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>1212 Polo & Turf Club News</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>/</li>
+                            <li><a href="#">News</a></li>
+                            <li>/</li>
+                            <li>1212 Polo & Turf Club News</li>                                       
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container padding-top">
+                    <div class="row">
+                        
+                        <!-- content Column Left -->
+                        <div class="col-md-12">                     
+                            <!-- Recent Post -->
+                            <div class="panel-box">
+                            
+                                <div class="titles">
+                                    <h4>News</h4>
+                                </div>
+
+{% for n in news %}
+                                <!-- Post Item -->
+                                <div class="post-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <!-- Mini SLide --> 
+                                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                              <ol class="carousel-indicators">
+                                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                                                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                                              </ol>
+                                              <div class="carousel-inner">
+                                                <div class="item active">
+                                                  <img src="{{n.image.url}}" alt="">
+                                                </div>
+                                                {% if n.image2.url %}
+                                                <div class="item">
+                                                  <img src="{{n.image2.url}}" alt="">
+                                                </div>
+                                                {% endif %}
+                                                {% if n.image3.url %}
+                                                <div class="item">
+                                                  <img src="{{n.image3.url}}" alt="">
+                                                </div>
+                                                {% endif %}
+                                              </div>
+                                              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                              </a>
+                                              <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                              </a>
+                                            </div>
+                                            <!-- End Mini SLide -->
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4><a href="{% url 'news:story' n.slug %}">{{n.caption}}</a></h4>
+                                            <p class="data-info">{{n.created|date:"F d, Y"}}  </p>
+                                            {{n.story|truncatewords:"20"|safe}}
+                                            
+                                                    </div>
+                                   </div>
+                                </div>
+                                 <!-- End Post Item -->
+{% endfor %}
+                                 
+                            </div>  
+                            <!-- End Recent Post --> 
+
+                            <!-- Pagination -->
+                             <!-- Pagination -->
+ <ul class="pagination no-margin">
+     {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">«</a></li>
+  
+{% endif %}
+                                <li class="active"><a href="#">Pg {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+                                {% for page in page_obj.paginator.page_range %}
+     
+   
+     <li><a href="?page={{ page }}"> {{ page }}</a></li>
+{% endfor %}
+                                
+                                
+                                {% if page_obj.has_next %}
+  
+                                <li><a href="?page={{ page_obj.next_page_number }}">»</a></li>
+                                
+                                {% endif %}
+                            </ul>
+ <!-- End Pagination -->
+                            <!-- End Pagination -->
+                        </div>
+                         <!-- End content Left -->
+                    </div>                     
+                </div>  
+                <!-- End Content Central -->
+  <!-- Newsletter -->
+                {% include 'nl_subscriber.html' %}
+                <!-- End Newsletter -->  
+ </section>
+            <!-- End Section Area -  Content Central -->
+      
+{% endblock %}

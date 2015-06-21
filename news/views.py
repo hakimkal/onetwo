@@ -9,6 +9,13 @@ import datetime
 
 
 
+class NewListView(ListView):
+    model = News
+    context_object_name  = 'news'
+    paginate_by = 20
+    
+    template_name = 'news/index.html'
+
 def index(request):
     
     now = datetime.datetime.now()

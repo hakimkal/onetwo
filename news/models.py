@@ -15,6 +15,8 @@ class News(models.Model):
         verbose_name_plural ='News'
     #ImageField(upload_to=None[, height_field=None, width_field=None, max_length=100, **options])
     image = models.ImageField(upload_to = 'news_images/',default = 'news_images/None/no-img.jpg')
+    
+    
     caption = models.CharField(max_length=255)
     created = models.DateTimeField(default=datetime.now(),auto_now=False, auto_now_add=True)
     modified = models.DateTimeField(default=datetime.now(),auto_now=True, auto_now_add=False)
@@ -22,6 +24,11 @@ class News(models.Model):
     slug = models.SlugField(max_length=255, unique=True,null=True)
     publish = models.BooleanField(choices=BOOL_OPTS, default = True)
     tags = models.CharField(max_length=255)
+    image2 = models.ImageField(upload_to = 'news_images/',default = 'news_images/None/no-img.jpg',null=True,blank=True)
+    image3 = models.ImageField(upload_to = 'news_images/',default = 'news_images/None/no-img.jpg',null=True,blank=True)
+    image4 = models.ImageField(upload_to = 'news_images/',default = 'news_images/None/no-img.jpg',null=True,blank=True)
+    image5 = models.ImageField(upload_to = 'news_images/',default = 'news_images/None/no-img.jpg',null=True,blank=True)
+    
     thumb_small = ImageRatioField('image', '800x533')
     thumb_big = ImageRatioField('image', '1600x1066')
     user = models.ForeignKey(get_user_model())
