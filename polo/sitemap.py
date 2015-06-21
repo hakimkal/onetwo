@@ -49,7 +49,7 @@ class PublicPageSitemap(Sitemap):
         return obj.modified
     
     def location(self, obj):
-        return reverse('pages',kwargs={'slug':obj.slug})
+        return reverse('pages:page',kwargs={'slug':obj.slug})
     
     
     
