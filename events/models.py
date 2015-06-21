@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from image_cropping import ImageRatioField
 from django.contrib.auth import get_user_model

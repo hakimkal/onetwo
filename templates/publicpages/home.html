@@ -98,11 +98,11 @@
                                                     <span>{{e.start_date.day}} / {{e.start_date | date:"b"}}</span>
                                                     {{e.start_date.year}}
                                                 </div>
-                                                <a href="#"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
+                                                <a href="{% url 'events:event' e.slug %}"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
                                                 
                                             </div>
                                             <div class="info-post">
-                                                <h4><a href="#">{{e.title}}</a></h4>
+                                                <h4><a href="{% url 'events:event' e.slug %}">{{e.title}}</a></h4>
                                                 <p>{{e.brief|truncatewords:10}}</p>
                                             </div>
                                         </li>
@@ -115,11 +115,11 @@
                                                     <span>{{e.start_date.day}} / {{e.start_date | date:"b"}}</span>
                                                     {{e.start_date.year}}
                                                 </div>
-                                                <a href="#"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
+                                                <a href="{% url 'events:event' e.slug %}"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
                                                 
                                             </div>
                                             <div class="info-post">
-                                                <h4><a href="#">{{e.title}}</a></h4>
+                                                <h4><a href="{% url 'events:event' e.slug %}">{{e.title}}</a></h4>
                                                 <p>{{e.brief|truncatewords:10}}</p>
                                             </div>
                                         </li>
@@ -130,11 +130,11 @@
                                                     <span>{{e.start_date.day}} / {{e.start_date | date:"b"}}</span>
                                                     {{e.start_date.year}}
                                                 </div>
-                                                <a href="#"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
+                                                <a href="{% url 'events:event' e.slug %}"><img src="{% cropped_thumbnail e "event_thumb_small" %}" alt=""></a>
                                                 
                                             </div>
                                             <div class="info-post">
-                                                <h4><a href="#">{{e.title}}</a></h4>
+                                                <h4><a href="{% url 'events:event' e.slug %}">{{e.title}}</a></h4>
                                                 <p>{{e.brief|truncatewords:10}}</p>
                                             </div>
                                         </li>                         
@@ -154,7 +154,7 @@
                                         <li>
                                             <div class="header-post">
                                                 <div class="date">
-                                                    <span> Featured Evevent</span>
+                                                    <span> Featured Event</span>
                                                     
                                                 </div>
                                                      </div>
