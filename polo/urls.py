@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     
     url(r'^$', publicpages.views.current_datetime, name="home"),
     url(r'^about/$',publicpages.views.about, name="about"),
-    url(r'^events/' ,include('events.urls')),
+    url(r'^events/' ,include('events.urls',namespace="events")),
     url('^news/', include('news.urls',namespace='news')),
    
     url(r'^pages/' ,include('publicpages.urls', namespace="pages")),

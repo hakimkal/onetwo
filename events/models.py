@@ -29,4 +29,11 @@ class Event(models.Model):
     created = models.DateTimeField(auto_now_add=True, auto_now=False,default=datetime.now)
     modified = models.DateTimeField(auto_now_add=False, auto_now=True,default=datetime.now)
     featured = models.BooleanField(choices=((True,'Yes'),(False,'No')), default=False)
-    #code
+    slug = models.SlugField(max_length=255, unique=True, null=True,blank=True)
+    
+    def __unicode__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+         
+        return reverse('events:event',kwargs={'slug': self.slug})

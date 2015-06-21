@@ -1,0 +1,203 @@
+{% extends 'homebase.html' %}
+{% load staticfiles %}
+{% load cropping %}
+{% block title %} 1212 Polo News {% endblock %}
+{% block content %}
+
+
+ <!-- Section Title -->           
+            <section class="section-title img-about">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>1212 Polo & Turf Club Events </h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>/</li>
+                            <li>Events </li>                                       
+                        </ul>
+                    </div>        
+                </div>
+
+                <div class="semiboxshadow text-center">
+                    <img src="{% static 'img/img-theme/shp.png' %}" class="img-responsive" alt="">
+                </div>
+
+                <!-- Content Central -->
+                <div class="container padding-top">
+                    <div class="row">
+                        <!-- content Column Left -->
+                        <div class="col-md-8">                     
+                            
+                            <div class="row">
+                                <!-- blog post-->  
+                                <ul class="events-carousel events-no-carousel">
+                                    {% for e in event_list %}
+                                    <!-- Item blog post -->  
+                                    <li class="col-xs-6 col-sm-6 col-md-4">
+                                        <div class="header-post">
+                                            <div class="date">
+                                                <span>{{e.start_date|date:"d" }}/{{e.start_date|date:"b" }}</span>
+                                               {{e.start_date|date:"Y" }}
+                                            </div>
+                                            <a href="{% url 'events:event' e.slug %}"><img src="{{e.image.url}}" alt=""></a>
+                                            
+                                        </div>
+                                        <div class="info-post">
+                                            <h4><a href="{% url 'events:event' e.slug %}">{{e.title}}</a></h4>
+                                            <p>{{e.brief|truncatewords:8}}</p>
+                                        </div>
+                                    </li>
+                                    <!-- End Item blog post -->
+{% endfor %}
+                                    
+
+                                </ul>
+                                <!-- End blog post-->  
+                            </div>
+
+                     
+                        </div>
+                         <!-- End content Left -->
+
+{% comment %}
+                        <!-- content Sidebar Right -->
+                        <aside class="col-md-4">
+                            <!-- Info -->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4><i class="fa fa-calendar"></i>Upcoming Events</h4>
+                                </div>
+                                <!-- Carousel Events -->
+                                <ul class="single-carousel">
+                                    <!-- Item  Event  -->
+                                    <li>
+                                        <div class="content-counter">
+                                            <p class="text-center"> 
+                                                <i class="fa fa-clock-o"></i> 
+                                                Countdown Till Start
+                                            </p>
+                                            <div id="event-one" class="counter"></div>
+                                            <ul class="post-options">
+                                                <li><i class="fa fa-calendar"></i>June 12, 2014</li>
+                                                <li><i class="fa fa-clock-o"></i>Kick-of, 12:00 PM</li> 
+                                            </ul>
+                                            <ul class="list-diary">
+                                                <!-- Item List Diary --> 
+                                                <li>
+                                                    <h5>LIGA BBVA <span>06-05-2014 - 11:00</span></h5>
+                                                    <ul class="club-logo">
+                                                        <li>
+                                                            <img src="img/clubs-logos/1.png" alt="">
+                                                            <h6>Real Madrid</h6>
+                                                        </li>
+                                                        <li><span>Vs</span></li>
+                                                        <li>
+                                                            <img src="img/clubs-logos/2.png" alt="">
+                                                            <h6>Valladolid</h6>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <!-- End Item List Diary --> 
+                                            </ul>
+                                            <a class="btn btn-primary" href="#">
+                                                VIEW EVENT PAGE
+                                                <i class="fa fa-trophy"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <!-- End Item  Event  -->
+
+                                    <!-- Item  Event -->
+                                    <li>
+                                        <div class="content-counter">
+                                            <p class="text-center"> 
+                                                <i class="fa fa-clock-o"></i> 
+                                                Countdown Till Start
+                                            </p>
+                                            <div id="event-two" class="counter"></div>
+                                            <ul class="post-options">
+                                                <li><i class="fa fa-calendar"></i>August 27, 2014</li>
+                                                <li><i class="fa fa-clock-o"></i>Kick-of, 12:00 PM</li> 
+                                            </ul>
+                                            <p>Ei eum affert postulant, ius te mazim zril alterum. Illum dolorem ius ut, eu postulant principes sit.  ert postulant, ius te mazim zril alterum Tibique scriptorem cu pri, te fugit voluptatum mel, nibh exerci denique at qui.</p>
+                                            <a class="btn btn-primary" href="#">
+                                                VIEW EVENT PAGE
+                                                <i class="fa fa-trophy"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <!-- End Item  Event -->
+
+                                    <!-- Item  Event -->
+                                    <li>
+                                        <div class="content-counter">
+                                            <p class="text-center"> 
+                                                <i class="fa fa-clock-o"></i> 
+                                                Countdown Till Start
+                                            </p>
+                                            <div id="event-three" class="counter"></div>
+                                            <ul class="post-options">
+                                                <li><i class="fa fa-calendar"></i>December 27, 2014</li>
+                                                <li><i class="fa fa-clock-o"></i>Kick-of, 12:00 PM</li> 
+                                            </ul>
+                                            <p>Ei eum affert postulant, ius te mazim zril alterum. Illum dolorem ius ut, eu postulant principes sit.  ert postulant, ius te mazim zril alterum Tibique scriptorem cu pri, te fugit voluptatum mel, nibh exerci denique at qui.</p>
+                                            <a class="btn btn-primary" href="#">
+                                                VIEW EVENT PAGE
+                                                <i class="fa fa-trophy"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <!-- End Item  Event -->
+                                </ul>
+                                <!-- End Carousel Events --> 
+                            </div>  
+                            <!-- End Info-->
+{% endcomment %}
+                          
+                        </aside>
+                        <!-- End content Sidebar Right -->
+                    </div>
+                    
+                    <ul class="pagination no-margin">
+     {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">«</a></li>
+  
+{% endif %}
+                                <li class="active"><a href="#">Pg {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+                                {% for page in page_obj.paginator.page_range %}
+     
+   
+     <li><a href="?page={{ page }}"> {{ page }}</a></li>
+{% endfor %}
+                                
+                                
+                                {% if page_obj.has_next %}
+  
+                                <li><a href="?page={{ page_obj.next_page_number }}">»</a></li>
+                                
+                                {% endif %}
+                            </ul>
+ <!-- End Pagination -->
+      
+                </div>  
+                <!-- End Content Central -->
+
+               
+                 <!-- Newsletter -->
+               {% include 'nl_subscriber.html' %}
+                <!-- End Newsletter -->
+            </section>
+            <!-- End Section Area - Content Central -->
+      
+
+
+{% endblock %}
