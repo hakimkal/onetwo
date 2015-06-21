@@ -12,7 +12,7 @@ import datetime
 class NewListView(ListView):
     model = News
     context_object_name  = 'news'
-    paginate_by = 20
+    paginate_by = 5
     
     template_name = 'news/index.html'
 

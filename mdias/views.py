@@ -21,6 +21,8 @@ class PhotosList(ListView):
         print(tag_list)
         ctx['tags'] =  set(tag_list)
         return ctx
+    
+    
     """
     def get_queryset(self):
         today = datetime.now() 
