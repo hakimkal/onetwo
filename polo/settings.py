@@ -60,6 +60,7 @@ INSTALLED_APPS = (
     'teams',
     'sliders',
     'news',
+     'disqus',
     'partners',
     'mdias',
     'nlsubscribers',
@@ -168,3 +169,5 @@ from easy_thumbnails.conf import Settings as thumbnail_settings
 THUMBNAIL_PROCESSORS = (
     'image_cropping.thumbnail_processors.crop_corners',
 ) + thumbnail_settings.THUMBNAIL_PROCESSORS
+DISQUS_API_KEY = 'URwLhk8v1Vn33a3UM4FStPjLfWGa2d5m4xKBboUJrA7O4bDcNcJDe76rdzZtIeCz'
+DISQUS_WEBSITE_SHORTNAME = '1212 Polo'

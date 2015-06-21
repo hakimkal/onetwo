@@ -21,7 +21,7 @@ class PhotosList(ListView):
         print(tag_list)
         ctx['tags'] =  set(tag_list)
         return ctx
-    
+    """
     def get_queryset(self):
         today = datetime.now() 
         startdate = today + timedelta(days=-14) 
@@ -32,4 +32,4 @@ class PhotosList(ListView):
         
          
         return queryset
-    
+    """

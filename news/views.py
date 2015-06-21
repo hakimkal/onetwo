@@ -3,6 +3,7 @@ from django.template  import RequestContext
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from events.models import Event
 from news.models import News
+from django.views.generic import ListView, DetailView
 from nlsubscribers.forms import NlsubscriberForm
 import datetime
 
@@ -39,14 +40,46 @@ def index(request):
     myDict['news']= news
     return render(request, "news/index.html", myDict)
 
-def detail(request, news_id):
+
+
+class NewsDetailView(DetailView):
+    
+    model = News
+    slug_url_field = 'slug'
+    context_object_name = 'thenews'
+    slug_url_kwarg = 'slug'
+    template_name = 'news/single-news.html'
+    
+    def get_context_data(self, **kwargs):
+        ctx = super(NewsDetailView,self).get_context_data(**kwargs)
+        nlsubscriber_form = NlsubscriberForm()
+        now = datetime.datetime.now()
+        theyear = datetime.datetime.today().year
+        news = News.objects.order_by("-created").all()[:4]
+    
+        
+        
+        nlsubscriber_form = NlsubscriberForm()
+        ctx['current_date'] = now
+        
+        ctx['theyear']= theyear,
+              
+        ctx['news'] = news
+        
+        ctx['nlform'] = nlsubscriber_form   
+        
+        return ctx
+        
+        
+    
+def detail(request, slug):
     
     cssClass = "page-sub-page page-blog-detail page-microsite"    
     now = datetime.datetime.now()
     theyear = datetime.datetime.today().year
     news = News.objects.order_by("-created").all()[:4]
     
-    thenews = News.objects.get(pk=news_id)
+    thenews = News.objects.get(slug=slug)
     #print thenews.user.first_name
     nlsubscriber_form = NlsubscriberForm()
     myDict = {'current_date':now
@@ -60,4 +93,4 @@ def detail(request, news_id):
     
     
     myDict['thenews']= thenews    
-    return render(request, "news/news_detail.html", myDict)
+    return render(request, "news/single-news.html", myDict)
