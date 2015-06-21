@@ -327,7 +327,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h4><a href="{% url 'news:story' n.slug %}"">{{n.caption}}</a></h4>
-                                            <p class="data-info">Aug 3, 2014  / <i class="fa fa-comments"></i><a href="#">0</a></p>
+                                            <p class="data-info"> {{n.created|date:"N d, Y"}}  </p>
                                             <p>{{n.story|truncatewords:20}}<br><a href="{% url 'news:story' n.slug %}">Read More [+]</a></p>                                            
                                         </div>
                                    </div>
