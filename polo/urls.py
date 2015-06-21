@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-
+from sitemap import *
 from django.contrib import admin
 import publicpages.views
 import nlsubscribers.views 
@@ -25,6 +25,24 @@ urlpatterns = patterns('',
     url(r'^nladd',nlsubscribers.views.nladd, name = "nladd"),
     
 )
+
+
+sitemaps = {
+    'news':NewsSitemap,
+    #'pages': FlatpageSitemap,
+    #'site':SosaiSitemap(['home']),
+    #['homepage_imprint', 'homepage_archive']
+    #'site': Sitemap,
+   
+    'public': PublicPageSitemap
+}
+
+
+urlpatterns += patterns('',
+                        (r'^sitemap\.xml', 'django.contrib.sitemaps.views.sitemap',
+                         { 'sitemaps':sitemaps
+     }),
+    )
 #for serving media files
 from polo import settings  
 urlpatterns += patterns(

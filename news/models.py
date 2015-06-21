@@ -3,7 +3,12 @@ from django.contrib.auth import get_user_model
 from image_cropping import ImageRatioField
 from datetime import datetime
 from django.core.urlresolvers import reverse
-
+BOOL_OPTS = (
+        (True, 'Yes')
+        ,
+        (False, 'No'),
+        
+    )   
 class News(models.Model):
     class Meta:
         verbose_name = 'News'
@@ -15,7 +20,7 @@ class News(models.Model):
     modified = models.DateTimeField(default=datetime.now(),auto_now=True, auto_now_add=False)
     story = models.TextField(blank= True)
     slug = models.SlugField(max_length=255, unique=True,null=True)
-    
+    publish = models.BooleanField(choices=BOOL_OPTS, default = True)
     tags = models.CharField(max_length=255)
     thumb_small = ImageRatioField('image', '800x533')
     thumb_big = ImageRatioField('image', '1600x1066')
