@@ -10,7 +10,7 @@
             <section class="section-title img-news">
                 <div class="overlay-bg"></div>
                 <div class="container">
-                    <h1>Single News</h1>
+                    <h1>{{thenews.caption}}</h1>
                 </div>
             </section>
             <!-- End Section Title --> 
@@ -21,7 +21,7 @@
                 <div class="crumbs">
                     <div class="container">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="{% url 'home' %}">Home</a></li>
                             <li>/</li>
                             <li><a href="#">News</a></li>
                             <li>/</li>
