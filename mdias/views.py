@@ -23,7 +23,7 @@ class PhotosList(ListView):
         return ctx
     
     
-    """
+    
     def get_queryset(self):
         today = datetime.now() 
         startdate = today + timedelta(days=-14) 
@@ -31,7 +31,7 @@ class PhotosList(ListView):
         queryset = super(PhotosList, self).get_queryset()
         if self.kwargs.get('recent') != "" :
             return queryset.filter(created__range=[startdate, today]).order_by('-created')
-        
+        else:
+            return queryset.order_by('-created')
          
         return queryset
-    """
