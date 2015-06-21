@@ -102,7 +102,7 @@
                                  
                                
                                 <ul  class="testimonials">
-                                    
+                                    {% if event.event_pdf %}
                                     <li>
                                         <blockquote><p>
                                         <a href="{{event.event_pdf.url}}" target="_blank" alt="{{event.event_pdf_title}}">
@@ -113,7 +113,7 @@
                                        
                                     </li>
                                     
-                                    
+                                    {% endif %}
                                 </ul>
                                 
                                  
