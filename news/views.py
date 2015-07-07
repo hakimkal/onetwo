@@ -15,6 +15,13 @@ class NewListView(ListView):
     paginate_by = 5
     
     template_name = 'news/index.html'
+    
+    def get_queryset(self):
+        queryset = super(NewListView, self).get_queryset()
+       
+            
+        return queryset.order_by("-created")
+        
 
 def index(request):
     
