@@ -24,7 +24,7 @@ def index(request):
     #events = Event.objects.order_by('-start_date')[:3]
     cssClass = 'page-sub-page page-blog-listing page-microsite'
     
-    news_list = News.objects.order_by("-created").all()
+    news_list = News.objects.all().order_by("-created")
     paginator = Paginator(news_list,6)
     
     nlsubscriber_form = NlsubscriberForm()

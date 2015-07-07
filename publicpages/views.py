@@ -22,7 +22,7 @@ def current_datetime(request):
 	sliders =  Slider.objects.filter(category= 'Home').order_by('position')
 	featured_events = Event.objects.filter(featured=True).order_by('start_date')
 	players_and_staff = Team.objects.filter(Q(group= 'Staff') | Q(group='Players'))
-	news = News.objects.all().order_by('created')[0:6]
+	news = News.objects.all().order_by('-created')[0:6]
 	dct = {'current_date': now,'partners':partners,'news': news,'s_and_p': players_and_staff,'sliders': sliders,'events': featured_events}
     
 	return render(request, 'publicpages/home.html',dct)
