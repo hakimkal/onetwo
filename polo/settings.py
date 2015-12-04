@@ -66,10 +66,17 @@ INSTALLED_APPS = (
     'partners',
     'mdias',
     'nlsubscribers',
-    'debug_toolbar',
+   
 
     
 )
+
+if SHOW_DEBUG_TOOLBAR:
+    
+    INSTALLED_APPS.__add__(('debug_toolbar',))
+
+else:
+    INSTALLED_APPS.__add__(( 'debug_toolbar',))
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
