@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^about/$',publicpages.views.about, name="about"),
     url(r'^events/' ,include('events.urls',namespace="events")),
     url('^news/', include('news.urls',namespace='news')),
-   
+      url(r'^daguerre/', include('daguerre.urls')),
     url(r'^pages/' ,include('publicpages.urls', namespace="pages")),
     url(r'^teams/' ,include('teams.urls')),
     url(r'^sliders/' ,include('sliders.urls')),
@@ -44,7 +44,9 @@ urlpatterns += patterns('',
      }),
     )
 #for serving media files
-from polo import settings  
+from polo import settings
+
+    
 urlpatterns += patterns(
     'django.views.static',
     (r'media/(?P<path>.*)',
@@ -54,7 +56,8 @@ urlpatterns += patterns(
 
 #for debug toolbar
 
-if settings.DEBUG:
+if settings.SHOW_DEBUG_TOOLBAR:
+    
     import debug_toolbar
     urlpatterns += patterns('',
         url(r'^__debug__/', include(debug_toolbar.urls)),

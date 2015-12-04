@@ -66,17 +66,13 @@ INSTALLED_APPS = (
     'partners',
     'mdias',
     'nlsubscribers',
+    'daguerre',
    
 
     
 )
 
-if SHOW_DEBUG_TOOLBAR:
-    
-    INSTALLED_APPS.__add__(('debug_toolbar',))
 
-else:
-    INSTALLED_APPS.__add__(( 'debug_toolbar',))
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -85,9 +81,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+   
 
 )
+if SHOW_DEBUG_TOOLBAR:
+    
+    INSTALLED_APPS.__add__(('debug_toolbar',))
+
+    MIDDLEWARE_CLASSES.__add__(( 'debug_toolbar.middleware.DebugToolbarMiddleware',))
 ROOT_URLCONF = 'polo.urls'
 
 WSGI_APPLICATION = 'polo.wsgi.application'
@@ -97,7 +98,9 @@ LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
+SOUTH_MIGRATION_MODULES = {
+    'daguerre': 'daguerre.south_migrations',
+}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
