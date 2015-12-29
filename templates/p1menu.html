@@ -1,0 +1,104 @@
+  {% load staticfiles %}
+  <header id="header" class="header-default">
+    <div class="shade">
+        <div class="container">
+        
+        <div class="row logo-container">
+            <div class="col-lg-12" style="height: 140px">
+            <a href="{% url 'home' %}" id="logo" style="margin-top: 5px">
+            <img src="{% static 'img/' %}logo.png" alt="1212" class="img-responsive center-block">
+               
+            <!--img src="1212polo_files/logo.png" alt="" class="logo-retina" height="61" width="320"--></a></div></div></div>
+        <div class="sticky-wrapper">
+            <nav role="navigation" id="navigation" class="text-center" style="background-color: #C0392B;margin-top: 30px;">
+                <label id="nav-toggle" for="toggle-navigation" class="visible-xs"> <i class="fa fa-bars fa-lg"></i> </label>
+                <input id="toggle-navigation" class="toggle-navigation-input" type="checkbox"><div class="container">
+                <ul style="font-size: 0px;" id="menu-main-menu" class="menu">
+                    <li style="font-size: 0px;" id="menu-item-2030" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1928 current_page_item menu-item-2030">
+                        <a href="{% url 'home' %}">Home</a></li>
+                    <li style="font-size: 0px;" id="menu-item-2029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-parent-item menu-item-2029 dropdown-menu-sub-indicator">
+                        <a href="#">12-12</a>
+                        <ul style="visibility: hidden; display: none;" class="sub-menu"><li id="menu-item-2032" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2032"><a href="#">History</a></li>
+                            <li id="menu-item-2031" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2031">
+                                <a href="{% url 'pages:page' 'trustees' %}">Trustees</a></li>
+                         </ul></li>
+
+                    <li style="font-size: 0px;" id="menu-item-19223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-1922 dropdown-menu-sub-indicator"><a href="#">Polo</a>
+                        <ul style="visibility: hidden; display: none;" class="sub-menu">
+                            <li id="menu-item-19273" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-1927 dropdown-menu-sub-indicator"><a href="#">Prominent Challenge Cups</a>
+                                <ul style="visibility: hidden; display: none;" class="sub-menu">
+                                    <li id="menu-item-20583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2058">
+                                        <a href="#">President Cup</a></li>
+                                    <li id="menu-item-20537" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2057">
+                                        <a href="#">Abuja Open Cup</a></li>
+                                    <li id="menu-item-20602" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2057">
+                                        <a href="#">Patron Cup</a></li>
+                                    <li id="menu-item-2059" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2059">
+                                        <a href="#">Argentine Ambassador Cup</a></li></ul></li>
+                            
+                            <li id="menu-item-2021" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2050">
+                                <a href="http://demo.curlythemes.com/equestrian/typography/">Polo Tournament</a></li>
+
+                            </ul>
+                    </li>
+
+                    <li style="font-size: 0px;" id="menu-item-19221" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-1922 dropdown-menu-sub-indicator"><a href="#">Horse Racing</a>
+                        <ul style="visibility: hidden; display: none;" class="sub-menu">
+                            <li id="menu-item-19271" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-1927 dropdown-menu-sub-indicator"><a href="#">Prominent Challenge Cups</a>
+                                <ul style="visibility: hidden; display: none;" class="sub-menu">
+                                    <li id="menu-item-20581" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2058">
+                                        <a href="#">Sultan Abubakar III Cup</a></li>
+                                    <li id="menu-item-20571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2057">
+                                        <a href="#">Abuja Derby Cup</a></li>
+                                    <li id="menu-item-20601" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2057">
+                                        <a href="#">Queen's Cup</a></li>
+                              </ul></li>
+                            <li id="menu-item-20501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2050">
+                                <a href="#">Sultan Abubakar Race Track</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <li style="font-size: 0px;" id="menu-item-2025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-parent-item menu-item-2025 dropdown-menu-sub-indicator">
+                        <a href="{% url 'events:events' %}">Events</a>
+                        <ul style="visibility: hidden; display: none;" class="sub-menu">
+                            <li id="menu-item-2045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045">
+                                <a href="{% url 'events:events' %}">Events</a></li>
+                            <li id="menu-item-20453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045">
+                                <a href="{% url 'multimedia:photos' ''  %}">Photo</a></li>
+
+                            <li id="menu-item-2044" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2044">
+                                <a href="#">Video</a></li>
+                            
+                        </ul></li>
+
+
+                    <li style="font-size: 0px;" id="menu-item-20331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2033">
+                        <a href="{% url 'multimedia:photos' ''  %}">Gallery</a></li>
+
+
+
+                    <li style="font-size: 0px;" id="menu-item-20251" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-parent-item menu-item-2025 dropdown-menu-sub-indicator">
+                        <a href="http://demo.curlythemes.com/equestrian/contact/">Facilities</a>
+                        <ul style="visibility: hidden; display: none;" class="sub-menu">
+                            <li id="menu-item-20451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2045">
+                                <a href="#">Horse Racing Track</a></li>
+
+                            <li id="menu-item-20441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2044">
+                                <a href="#">Parking Lot</a></li>
+                        </ul></li>
+
+
+                    <li style="font-size: 0px;" id="menu-item-2028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2028">
+                        <a href="#">News</a></li>
+                    <li style="font-size: 0px;" id="menu-item-2033" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2033">
+                        <a href="{% url 'pages:contact' %}">Contact</a></li>
+
+                   </ul></div> </nav></div></div>
+
+
+       
+
+
+    </header>

@@ -10742,75 +10742,9 @@ caption {
         margin-bottom: 5.6rem
     }
 }
+ 
 
-.footer-default #footer {
-    background-image: url(//demo.curlythemes.com/equestrian/wp-content/themes/equestrian/images/footer/bg-footer.jpg);
-    background-repeat: repeat-x;
-    background-position: center top;
-    position: relative;
-    background-size: auto
-}
-
-.footer-default #footer::before {
-    content: '';
-    background-image: url(//demo.curlythemes.com/equestrian/wp-content/themes/equestrian/images/footer/grass.png);
-    background-repeat: repeat-x;
-    background-position: center bottom;
-    background-size: auto;
-    height: 50px;
-    margin-top: -50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    position: absolute
-}
-
-.footer-default #footer {
-    background-image: url(//demo.curlythemes.com/equestrian/wp-content/themes/equestrian/images/footer/bg-footer.jpg);
-    background-repeat: repeat-x;
-    background-position: center top;
-    position: relative;
-    background-size: auto
-}
-
-.footer-default #footer::before {
-    content: '';
-    background-image: url(//demo.curlythemes.com/equestrian/wp-content/themes/equestrian/images/footer/grass.png);
-    background-repeat: repeat-x;
-    background-position: center bottom;
-    background-size: auto;
-    height: 50px;
-    margin-top: -50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    position: absolute
-}
-
-.footer-new #footer {
-    background-image: url(//demo.curlythemes.com/equestrian/wp-content/themes/equestrian/images/footer/bg-footer-2.jpg);
-    background-repeat: repeat-x;
-    background-position: center top;
-    position: relative
-}
-
-.footer-new #footer::before {
-    content: '';
-    background-image: url(//demo.curlythemes.com/equestrian/wp-content/themes/equestrian/images/footer/stones.png);
-    background-repeat: repeat-x;
-    background-position: center bottom;
-    background-size: contain;
-    height: 80px;
-    margin-top: -50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    position: absolute
-}
-
+ 
 #back-top {
     position: fixed;
     bottom: 0;

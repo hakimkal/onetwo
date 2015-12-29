@@ -3,7 +3,9 @@ from image_cropping import ImageRatioField
 from datetime import datetime
 from django.db.models import Max
 
-
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill, ResizeToFit
+from polo.settings import PROJECT_PATH, BASE_DIR
 class Slider(models.Model):
     CAT_OPTS = (
         ('Home', 'Home Page'),
@@ -19,10 +21,23 @@ class Slider(models.Model):
         l  =  (i,i)
         list_range.append(l)
     pos_range = tuple(list_range)
-        
+    """    
     banner = models.ImageField(upload_to='sliders')
     thumb = ImageRatioField('banner', '3840x2574')
     thumb_small = ImageRatioField('banner', '1920x1272')
+    """
+    banner = ProcessedImageField(upload_to='sliders',
+                                           processors=[ResizeToFit(1384, 917)],
+                                           format='JPEG',
+                                           options={'quality': 60})
+    thumb = ProcessedImageField(upload_to='sliders',null=True, blank=True,
+                                           processors=[ResizeToFit(1384, 917)],
+                                           format='PNG',
+                                           options={'quality': 60})
+    smallthumb = ProcessedImageField(upload_to='sliders',null=True, blank=True,
+                                           processors=[ResizeToFit(200, 200)],
+                                           format='PNG',
+                                           options={'quality': 60})
     title = models.CharField(max_length=255, blank=True, null=True)
     url= models.URLField(blank=True, null=True)
     description = models.TextField(blank=True,null=True)
