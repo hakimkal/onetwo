@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load cropping %}
+{% load daguerre %}
 <!DOCTYPE html>
 <html id="ls-global" class=" js_active  vc_desktop  vc_transform " lang="en-US"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -64,6 +66,32 @@
   {% endblock %}
   
   
+ <!-- News Area -->
+ 
+ <aside class="pre-footer animated animated_off" style="display: block; opacity: 1;">
+   <div class="container">
+      <div class="row" style="position: relative; height: 173.5px;">
+         <aside id="curly_recent_widget-3" class="sidebar-widget custom_recent_posts animated col-xs-12 col-xs-12 animated_off" style="position: absolute; left: 0px; top: 0px; display: block; opacity: 1;">
+            <ul class="recent-posts type-thumbnail" style="position: relative; height: 117.5px;">
+               {% for n in  request.news %}
+               <li class="recent-news-odd recent-post  cols-3 clearfix" style="position: absolute; left: 0px; top: 0px;">
+                  <time datetime="2013-07-11"><span>{{n.created|date:"d"}}</span><em>{{n.created|date:"M"}}</em></time><a href="{% url 'news:story' n.slug %}">
+                  <img width="150" height="150" src="{% cropped_thumbnail n "thumb_small" %}" class="img-responsive wp-post-image" alt="{{n.caption}}"></a>
+                  <h6><a href="{% url 'news:story' n.slug %}"> {{n.caption|truncatewords:9}}</a></h6>
+                  <span>
+                    <a href="{% url 'news:story' n.slug %}">{{n.category}}</a> -
+                   
+                    <a href="{% url 'news:story' n.slug %}">News</a></span>
+               </li>
+               
+               
+               {% endfor %}
+            </ul>
+         </aside>
+      </div>
+   </div>
+</aside>
+ <!-- End News Area -->
     <div id="footer" class="animated" class="bg-image">
         <div class="container">
         <div style="position: relative; height: auto;" class="row footer">

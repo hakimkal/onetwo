@@ -134,42 +134,6 @@
  <!--  end content area -->
  
  
- <!-- News Area -->
- 
- <aside class="pre-footer animated animated_off" style="display: block; opacity: 1;">
-   <div class="container">
-      <div class="row" style="position: relative; height: 173.5px;">
-         <aside id="curly_recent_widget-3" class="sidebar-widget custom_recent_posts animated col-xs-12 col-xs-12 animated_off" style="position: absolute; left: 0px; top: 0px; display: block; opacity: 1;">
-            <ul class="recent-posts type-thumbnail" style="position: relative; height: 117.5px;">
-               {% for n in  news %}
-               <li class="recent-news-odd recent-post  cols-3 clearfix" style="position: absolute; left: 0px; top: 0px;">
-                  <time datetime="2013-07-11"><span>{{n.created|date:"d"}}</span><em>{{n.created|date:"M"}}</em></time><a href="{% url 'news:story' n.slug %}">
-                  <img width="150" height="150" src="{% cropped_thumbnail n "thumb_small" %}" class="img-responsive wp-post-image" alt="{{n.caption}}"></a>
-                  <h6><a href="{% url 'news:story' n.slug %}"> {{n.caption|truncatewords:9}}</a></h6>
-                  <span>
-                    <a href="{% url 'news:story' n.slug %}">{{n.category}}</a> -
-                   
-                    <a href="{% url 'news:story' n.slug %}">News</a></span>
-               </li>
-               {% empty %}
-               <li class="recent-news-even recent-post  cols-3 clearfix" style="position: absolute; left: 380px; top: 0px;">
-                  <time datetime="2013-07-07"><span>07</span><em>Jul</em></time><a href="http://demo.curlythemes.com/equestrian/"><img width="150" height="150" src="http://demo.curlythemes.com/equestrian/wp-content/uploads/sites/2/2013/07/941351-1024x768-image-51400499-1024x768-150x150.jpg" class="img-responsive wp-post-image" alt="941351-1024x768-image-51400499-1024x768"></a>
-                  <h6><a href="http://demo.curlythemes.com/equestrian/international-helmet-awareness-day-2013/">    12-12 Polo and Turf Club is where records are set and broken; 11 year old Primary 5 pupil of El-Amin</a></h6>
-                  <span><a href="http://demo.curlythemes.com/equestrian/category/competitions/">Competitions</a> - <a href="http://demo.curlythemes.com/equestrian/category/news/">News</a></span>
-               </li>
-               <li class="recent-news-odd recent-post  cols-3 clearfix" style="position: absolute; left: 760px; top: 0px;">
-                  <time datetime="2013-06-30"><span>30</span><em>Jun</em></time><a href="http://demo.curlythemes.com/equestrian/"><img width="150" height="150" src="http://demo.curlythemes.com/equestrian/wp-content/uploads/sites/2/2013/07/horse-03-150x150.jpg" class="img-responsive wp-post-image" alt="horse-03"></a>
-                  <h6><a href="http://demo.curlythemes.com/equestrian/discount-registration-offered-for-older-arabian-and-half-arabian-horses/">  Former governor of Rivers State Rt Hon Rotimi Amaechi explains why he doesn't play Polo.</a></h6>
-                  <span><a href="http://demo.curlythemes.com/equestrian/category/competitions/">Competitions</a> - <a href="http://demo.curlythemes.com/equestrian/category/legal/">Legal</a></span>
-               </li>
-               
-               {% endfor %}
-            </ul>
-         </aside>
-      </div>
-   </div>
-</aside>
- <!-- End News Area -->
  
  
 {% endblock %}
