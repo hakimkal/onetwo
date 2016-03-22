@@ -19,9 +19,22 @@
             <!-- Section Area - Content Central -->
             <section class="content-info">
 
-                <br/><br/>
+                <div class="crumbs">
+                    <div class="container">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>/</li>
+                            <li><a href="#">News</a></li>
+                            <li>/</li>
+                                                                  
+                        </ul>
+                    </div>        
+                </div>
 
-                
+                <div class="semiboxshadow text-center">
+                    <img src="{% static 'img/img-theme/shp.png' %}" class="img-responsive" alt="">
+                </div>
+
                 <!-- Content Central -->
                 <div class="container padding-top">
                     <div class="row">
@@ -161,14 +174,133 @@
                         </div>
                          <!-- End content Left -->
 
-                        
+                        <!-- content Sidebar Right -->
+                        <aside class="col-md-4">                     
                             
+                            <div>
+                                <h4>Searh Sidebar</h4>
+                                <form class="search" action="#" method="Post">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Search..." name="email"  type="email" required="required">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary" type="submit" name="subscribe" >Go!</button>
+                                        </span>
+                                    </div>
+                                </form>   
+                            </div>
+
+                            <!-- Video presentation -->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4>Presentation</h4>
+                                </div>
+                                <!-- Locations Video --> 
+                                <div class="row">
+                                      <iframe class="video"  src="//www.youtube.com/embed/HkJgx-GqzOo"></iframe>
+                                    <div class="col-md-12">
+                                         <h4>Dubai World Cup 2014 </h4>
+                                            <p> Worlds Richest Horse Race</p>
+                                                   </div>
+                                </div>
+                                <!-- End Locations Video --> 
+                            </div>  
+                            <!-- End Video presentation-->
 
                            
 
                             
 
-                           
+                            <!-- Info -->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4><i class="fa fa-calendar"></i>Upcoming Events</h4>
+                                </div>
+                                <!-- Carousel Events -->
+                                <ul class="single-carousel">
+                                    <!-- Item  Event  -->
+                                    <li>
+                                        <div class="content-counter">
+                                            <p class="text-center"> 
+                                                <i class="fa fa-clock-o"></i> 
+                                                Countdown Till Start
+                                            </p>
+                                            <div id="event-one" class="counter"></div>
+                                            <ul class="post-options">
+                                                <li><i class="fa fa-calendar"></i>June 12, 2014</li>
+                                                <li><i class="fa fa-clock-o"></i>Kick-of, 12:00 PM</li> 
+                                            </ul>
+                                            <ul class="list-diary">
+                                                <!-- Item List Diary --> 
+                                                <li>
+                                                    <h5>LIGA BBVA <span>06-05-2014 - 11:00</span></h5>
+                                                    <ul class="club-logo">
+                                                        <li>
+                                                            <img src="img/clubs-logos/1.png" alt="">
+                                                            <h6>Real Madrid</h6>
+                                                        </li>
+                                                        <li><span>Vs</span></li>
+                                                        <li>
+                                                            <img src="img/clubs-logos/2.png" alt="">
+                                                            <h6>Valladolid</h6>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <!-- End Item List Diary --> 
+                                            </ul>
+                                            <a class="btn btn-primary" href="#">
+                                                VIEW EVENT PAGE
+                                                <i class="fa fa-trophy"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <!-- End Item  Event  -->
+
+                                    <!-- Item  Event -->
+                                    <li>
+                                        <div class="content-counter">
+                                            <p class="text-center"> 
+                                                <i class="fa fa-clock-o"></i> 
+                                                Countdown Till Start
+                                            </p>
+                                            <div id="event-two" class="counter"></div>
+                                            <ul class="post-options">
+                                                <li><i class="fa fa-calendar"></i>August 27, 2014</li>
+                                                <li><i class="fa fa-clock-o"></i>Kick-of, 12:00 PM</li> 
+                                            </ul>
+                                            <p>Ei eum affert postulant, ius te mazim zril alterum. Illum dolorem ius ut, eu postulant principes sit.  ert postulant, ius te mazim zril alterum Tibique scriptorem cu pri, te fugit voluptatum mel, nibh exerci denique at qui.</p>
+                                            <a class="btn btn-primary" href="#">
+                                                VIEW EVENT PAGE
+                                                <i class="fa fa-trophy"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <!-- End Item  Event -->
+
+                                    <!-- Item  Event -->
+                                    <li>
+                                        <div class="content-counter">
+                                            <p class="text-center"> 
+                                                <i class="fa fa-clock-o"></i> 
+                                                Countdown Till Start
+                                            </p>
+                                            <div id="event-three" class="counter"></div>
+                                            <ul class="post-options">
+                                                <li><i class="fa fa-calendar"></i>December 27, 2014</li>
+                                                <li><i class="fa fa-clock-o"></i>Kick-of, 12:00 PM</li> 
+                                            </ul>
+                                            <p>Ei eum affert postulant, ius te mazim zril alterum. Illum dolorem ius ut, eu postulant principes sit.  ert postulant, ius te mazim zril alterum Tibique scriptorem cu pri, te fugit voluptatum mel, nibh exerci denique at qui.</p>
+                                            <a class="btn btn-primary" href="#">
+                                                VIEW EVENT PAGE
+                                                <i class="fa fa-trophy"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <!-- End Item  Event -->
+                                </ul>
+                                <!-- End Carousel Events --> 
+                            </div>  
+                            <!-- End Info-->
+
                             
                         </aside>
                         <!-- End content Sidebar Right -->
@@ -177,7 +309,7 @@
                 <!-- End Content Central -->
 
                 <!-- Newsletter -->
-               
+                {% include 'nl_subscriber.html' %}
                 <!-- End Newsletter -->  
             </section>
             <!-- End Section Area -  Content Central -->
