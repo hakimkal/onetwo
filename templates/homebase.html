@@ -75,7 +75,7 @@
             <ul class="recent-posts type-thumbnail" style="position: relative; height: 117.5px;">
                {% for n in  request.news %}
                <li class="recent-news-odd recent-post  cols-3 clearfix" style="position: absolute; left: 0px; top: 0px;">
-                  <time datetime="2013-07-11"><span>{{n.created|date:"d"}}</span><em>{{n.created|date:"M"}}</em></time><a href="{% url 'news:story' n.slug %}">
+                  <time datetime="{{n.created|date:"y-m-d"}}"><span>{{n.created|date:"d"}}</span><em>{{n.created|date:"M"}}</em></time><a href="{% url 'news:story' n.slug %}">
                   <img width="150" height="150" src="{% cropped_thumbnail n "thumb_small" %}" class="img-responsive wp-post-image" alt="{{n.caption}}"></a>
                   <h6><a href="{% url 'news:story' n.slug %}"> {{n.caption|truncatewords:9}}</a></h6>
                   <span>
